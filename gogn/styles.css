@@ -1,6 +1,11 @@
+@charset "UTF-8";
 /*Skrifa css kóða hér þar til Scss er komið í lag.**/
 a {
+<<<<<<< HEAD
+  //font-size: 50em;
+=======
     font-size: 30em;
     background-color: blue;
     color: red;
+>>>>>>> af9e384504bfd98977c64e4f654a018a2ac1ce08
 }

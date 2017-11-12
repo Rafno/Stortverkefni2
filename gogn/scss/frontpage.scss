@@ -5,15 +5,23 @@ html{
   /*Bakgrunnur settur sem grár*/
   background-color: rgb(0, 0, 0, 0.5);
   color: rgb(255, 255, 255, 255);
+<<<<<<< HEAD
+  //allur texti settur sem hvítur
+=======
+>>>>>>> af9e384504bfd98977c64e4f654a018a2ac1ce08
   color: white;
   font-size: 1em;
 }
-/*Header er fyrir textana mynbandaleiga og  nýleg myndbönd*/
+/*Header er fyrir textan mynbandaleiga*/
 header{
   display: flex;
   justify-content: flex-start;
   /*textinn skalaður sem font size 1em*/
   font-size: 3em;
+}
+/*fyrir hverja fyrirsögn s.s.nýleg myndbönd og kennslumyndbönd */
+title{
+
 }
 /*unorded list */
 ul{
