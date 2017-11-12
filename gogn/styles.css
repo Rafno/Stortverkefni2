@@ -1,13 +1,13 @@
 @charset "UTF-8";
-/*her tharf a� koma eitthvad, held eg. eg kann ekki nogu vel a scss.*/
+/*her tharf ad koma eitthvad, held eg. eg kann ekki nogu vel a scss.*/
 /*Þetta sass mun sjá um frontpageið*/
 /*það er öll síðan*/
 /* red */
 html {
-  /*Bakgrunnur settur sem grár*/
+  /*background color gray*/
   background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  color: white;
+  //color: white;
+  //color: white;
   font-size: 1em; }
 
 /*Header er fyrir textan mynbandaleiga*/

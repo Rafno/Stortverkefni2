@@ -3,11 +3,10 @@
 
 /**
  * scripts.js tekur inn videos.json og gefur okkur adgang
-*  Sem fremur að við faum að bida eftir videos json.
+*  Sem fremur aï¿½ viï¿½ faum aï¿½ bida eftir videos json.
  */
 /*
 * fetch fall sem saekir videos.json og parsear fyrir okkur.
-* Helgi, stop trying to make 'fetch' happen, it's not going to happen.
 */
 function thatIsSoFetch() {
   return fetch('videos.json').then(function (data) {
