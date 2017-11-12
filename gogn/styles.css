@@ -1,7 +1,29 @@
 @charset "UTF-8";
-/*Skrifa css koda her thar til Scss er komi� i lag.**/
-a {
-    font-size: 30em;
-    background-color: blue;
-    color: red;
-}
+/*her tharf a� koma eitthvad, held eg. eg kann ekki nogu vel a scss.*/
+/*Þetta sass mun sjá um frontpageið*/
+/*það er öll síðan*/
+/* red */
+html {
+  /*Bakgrunnur settur sem grár*/
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  color: white;
+  font-size: 1em; }
+
+/*Header er fyrir textan mynbandaleiga*/
+header {
+  display: flex;
+  justify-content: flex-start;
+  /*textinn skalaður sem font size 1em*/
+  font-size: 3em; }
+
+/*fyrir hverja fyrirsögn s.s.nýleg myndbönd og kennslumyndbönd */
+/*unorded list */
+ul {
+  display: flex;
+  /*ef media verður minni en 500 px þá wrap*/ }
+  @media (max-width: 500px) {
+    ul {
+      flex-wrap: wrap; } }
+
+/*fyrir hvert stak í listanum og þau eru 2 hér þarf að byrja að gera ráð fyrir media*/
