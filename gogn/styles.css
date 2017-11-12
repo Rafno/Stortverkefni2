@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @charset "UTF-8";
 /*her tharf ad koma eitthvad, held eg. eg kann ekki nogu vel a scss.*/
 /*Þetta sass mun sjá um frontpageið*/
@@ -9,6 +10,20 @@ html {
   //color: white;
   //color: white;
   font-size: 1em; }
+=======
+﻿@charset "UTF-8";
+/*her tharf ad koma eitthvad, held eg. eg kann ekki nogu vel a scss.*/
+/*Þetta sass mun sjá um frontpageid*/
+/*það er öll síðan*/
+/* red */
+html {
+    /*Bakgrunnur settur sem grar*/
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    color: white;
+    font-size: 1em;
+}
+>>>>>>> c4dc74394391b8f6bd277f8dca1820712d5893fc
 
 /*Header er fyrir textan mynbandaleiga*/
 header {
