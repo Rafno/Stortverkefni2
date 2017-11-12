@@ -1,29 +1,18 @@
-<<<<<<< HEAD
 @charset "UTF-8";
-/*her tharf ad koma eitthvad, held eg. eg kann ekki nogu vel a scss.*/
-/*Þetta sass mun sjá um frontpageið*/
-/*það er öll síðan*/
-/* red */
-html {
-  /*background color gray*/
-  background-color: rgba(0, 0, 0, 0.5);
-  //color: white;
-  //color: white;
-  font-size: 1em; }
-=======
-﻿@charset "UTF-8";
-/*her tharf ad koma eitthvad, held eg. eg kann ekki nogu vel a scss.*/
 /*Þetta sass mun sjá um frontpageid*/
-/*það er öll síðan*/
+/*það er oll síðan*/
 /* red */
 html {
-    /*Bakgrunnur settur sem grar*/
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    color: white;
-    font-size: 1em;
-}
->>>>>>> c4dc74394391b8f6bd277f8dca1820712d5893fc
+  /*Bakgrunnur settur sem grar*/
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #ff02ff;
+  max-width: 10px;
+  color: white;
+  font-size: 1em; }
+
+.a {
+  color: red;
+  background-color: blue; }
 
 /*Header er fyrir textan mynbandaleiga*/
 header {
@@ -32,7 +21,7 @@ header {
   /*textinn skalaður sem font size 1em*/
   font-size: 3em; }
 
-/*fyrir hverja fyrirsögn s.s.nýleg myndbönd og kennslumyndbönd */
+/*fyrir hverja fyrirsögn s.s.nyleg myndbönd og kennslumyndbond */
 /*unorded list */
 ul {
   display: flex;
@@ -41,4 +30,4 @@ ul {
     ul {
       flex-wrap: wrap; } }
 
-/*fyrir hvert stak í listanum og þau eru 2 hér þarf að byrja að gera ráð fyrir media*/
+/*fyrir hvert stak í listanum og þau eru 2 hér þarf að byrja að gera rad fyrir media*/
