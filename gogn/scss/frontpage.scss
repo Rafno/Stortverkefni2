@@ -1,0 +1,32 @@
+/*Þetta sass mun sjá um frontpageið*/
+/*það er öll síðan*/
+   /* red */
+html{
+  /*Bakgrunnur settur sem grár*/
+  background-color: rgb(0, 0, 0, 0.5);
+  color: rgb(255, 255, 255, 255);
+  allur texti settur sem hvítur
+  color: white;
+  font-size: 1em;
+}
+/*Header er fyrir textana mynbandaleiga og  nýleg myndbönd*/
+header{
+  display: flex;
+  justify-content: flex-start;
+  /*textinn skalaður sem font size 1em*/
+  font-size: 3em;
+}
+/*unorded list */
+ul{
+  display: flex;
+  /*ef media verður minni en 500 px þá wrap*/
+  @media(max-width: 500px){
+    flex-wrap: wrap;
+  }
+
+}
+/*fyrir hvert stak í listanum og þau eru 2 hér þarf að byrja að gera ráð fyrir media*/
+li{
+
+
+}
