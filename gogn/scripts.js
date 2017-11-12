@@ -15,7 +15,6 @@ function thatIsSoFetch() {
 /*Þegar thatIsSoFetch er búið að keyra, afþví það er async, þá keyrir restin af kóðanum.
 *Annars náum við aldrei í JSON.
 */
-
 var Fetched = Promise.resolve(thatIsSoFetch());
 console.log(Fetched + "Hall");
 function runIt() {
@@ -26,4 +25,4 @@ function runIt() {
   });
 }
 runIt();
-/*----------Ekki kóða neitt nema ef það bíði eftir thatIsSoFetch!!!---------------*/
+/*----------Ekki kóða neitt sem bíður ekki eftir thatIsSoFetch!!!---------------*/
