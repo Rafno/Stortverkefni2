@@ -1,7 +1,9 @@
-@charset "UTF-8";
-/*Skrifa css koda her thar til Scss er komið i lag.**/
+/*Skrifa css kï¿½ï¿½a hï¿½r ï¿½ar til Scss er komiï¿½ ï¿½ lag.**/
 a {
+  //font-size: 50em;
+
     font-size: 30em;
     background-color: blue;
     color: red;
+
 }

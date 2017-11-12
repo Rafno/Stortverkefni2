@@ -1,13 +1,6 @@
 // JavaScript source code
-<<<<<<< HEAD
-/**
- * scripts.js tekur inn videos.json og gefur okkur aðgang
-*  Sem fremur að 
- */
-=======
 document.write("Hallo!");
 
-<<<<<<< HEAD
 fetch('videos.json')
   .then(response => response.json())
   .then(data => {
@@ -15,10 +8,9 @@ fetch('videos.json')
     console.log(videos);
   })
   .catch(error => console.log("We failed"));
-=======
->>>>>>> origin/master
+
 /*
-* fetch fall sem sækir videos.json og parsear það fyrir okkur.
+* fetch fall sem sï¿½kir videos.json og parsear ï¿½aï¿½ fyrir okkur.
 * Helgi, stop trying to make 'fetch' happen, it's not going to happen.
 */
 function thatIsSoFetch() {
@@ -28,10 +20,11 @@ function thatIsSoFetch() {
     return json;
   });
 }
-/*Þegar thatIsSoFetch er búið að keyra, afþví það er async, þá keyrir restin af kóðanum.
-*Annars náum við aldrei í JSON.
+/*ï¿½egar thatIsSoFetch er bï¿½iï¿½ aï¿½ keyra, afï¿½vï¿½ ï¿½aï¿½ er async, ï¿½ï¿½ keyrir restin af kï¿½ï¿½anum.
+*Annars nï¿½um viï¿½ aldrei ï¿½ JSON.
 */
-
+var Fetched = Promise.resolve(thatIsSoFetch());
+console.log(Fetched + "Hall");
 function runIt() {
   thatIsSoFetch().then(function (result) {
     var days = parseInt(result.videos[0].created);
@@ -40,5 +33,4 @@ function runIt() {
   });
 }
 runIt();
-/*----------Ekki kóða neitt sem bíður ekki eftir thatIsSoFetch!!!---------------*/
->>>>>>> af9e384504bfd98977c64e4f654a018a2ac1ce08
+/*----------Ekki kï¿½ï¿½a neitt sem bï¿½ï¿½ur ekki eftir thatIsSoFetch!!!---------------*/
