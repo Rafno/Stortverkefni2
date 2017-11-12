@@ -16,9 +16,7 @@ function thatIsSoFetch() {
     return json;
   });
 }
-/
-var Fetched = Promise.resolve(thatIsSoFetch());
-console.log(Fetched + "Hall");
+
 function runIt() {
   thatIsSoFetch().then(function (result) {
     var days = parseInt(result.videos[0].created);
@@ -26,3 +24,4 @@ function runIt() {
     console.log(days);
   });
 }
+runIt();
