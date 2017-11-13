@@ -51,6 +51,7 @@ ul{
 /*fyrir hvert stak í listanum og þau eru 2 hér þarf að byrja að gera rad fyrir media*/
 li{
 
+    }
 
 .line {
     display: flex;
@@ -58,6 +59,8 @@ li{
 
 }
 img{
+    height: 100%;
     padding: 25px 25px 25px 25px;
     width: 100%;
     object-fit: cover;
+}

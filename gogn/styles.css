@@ -41,8 +41,11 @@ ul {
       flex-wrap: wrap; } }
 
 /*fyrir hvert stak í listanum og þau eru 2 hér þarf að byrja að gera rad fyrir media*/
+.line {
   display: flex;
+  justify-content: center; }
 
+img {
   height: 100%;
   padding: 25px 25px 25px 25px;
   width: 100%;
@@ -95,7 +98,9 @@ ul {
     .col-sm-12-sm-6 {
       width: 50%; }
     .col-sm-12-sm-3 {
+      width: 25%; } }
 
+@media (max-width: 500px) and (min-width: 1200px) {
   .col-sm body {
     max-width: 1200px;
     margin: 0 auto;
