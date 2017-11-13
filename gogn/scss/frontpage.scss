@@ -22,11 +22,12 @@
   }
 
 .line{
+  display: flex;
+  justify-content: flex-end;
 
 }
 .list{
-display: flex;
-flex-flow: row;
+
 }
 /*Header er fyrir textan mynbandaleiga*/
 .header{
