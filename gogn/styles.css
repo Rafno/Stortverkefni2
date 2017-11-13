@@ -41,15 +41,22 @@ ul {
       flex-wrap: wrap; } }
 
 /*fyrir hvert stak í listanum og þau eru 2 hér þarf að byrja að gera rad fyrir media*/
+  display: flex;
+
+  height: 100%;
+  padding: 25px 25px 25px 25px;
+  width: 100%;
+  object-fit: cover; }
+
 .videos__container {
   width: 100%; }
 
 .row {
   display: flex;
   flex-wrap: wrap;
+  margin-right: -10px;
   margin-bottom: 20px;
-  margin-left: -10px;
-  margin-right: -10px; }
+  margin-left: -10px; }
 
 .col {
   padding-left: 20px / 2;
@@ -68,5 +75,35 @@ ul {
     width: 25%; }
   @media (max-width: 500px) {
     .col-sm-12 {
-      width: 100%;
-      width: 100%; } }
+      padding-right: 20px / 2;
+      padding-left: 20px / 2; }
+      .col-sm-12-12 {
+        width: 100%; }
+      .col-sm-12-8 {
+        width: 66.66667%; }
+      .col-sm-12-6 {
+        width: 50%; }
+      .col-sm-12-4 {
+        width: 33.33333%; }
+      .col-sm-12-3 {
+        width: 25%; }
+      .col-sm-12-1 {
+        width: 8.33333%; } }
+  @media (max-width: 500px) and (max-width: 599px) {
+    .col-sm-12-sm-12 {
+      width: 100%; }
+    .col-sm-12-sm-6 {
+      width: 50%; }
+    .col-sm-12-sm-3 {
+
+  .col-sm body {
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow-x: hidden; } }
+  @media (max-width: 500px) {
+    .col-sm .offset-2 {
+      margin-left: 16.66667%; } }
+
+@media (max-width: 500px) and (max-width: 599px) {
+  .col-sm .offset-sm-0 {
+    margin-left: 0; } }
