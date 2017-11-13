@@ -19,54 +19,58 @@ html {
   padding: 0;
   margin: 0; }
 
-.list {
+.line {
   display: flex;
-  flex-flow: row; }
+  justify-content: center; }
 
-/*Header er fyrir textan mynbandaleiga*/
-.header {
-  color: blue; }
+img {
+  height: 100%;
+  padding: 25px 25px 25px 25px;
+  width: 100%;
+  object-fit: cover; }
 
-/*  fyrir hverja fyrirsögn s.s.nyleg myndbönd og kennslumyndbond */
-.title {
-  font-size: 10em; }
-
-/*unorded list */
-ul {
-  color: green;
-  display: flex;
-  /*ef media verður minni en 500 px þá wrap*/ }
-  @media (max-width: 500px) {
-    ul {
-      flex-wrap: wrap; } }
-
-/*fyrir hvert stak í listanum og þau eru 2 hér þarf að byrja að gera rad fyrir media*/
 .videos__container {
   width: 100%; }
 
 .row {
   display: flex;
   flex-wrap: wrap;
+  margin-right: -10px;
   margin-bottom: 20px;
-  margin-left: -10px;
-  margin-right: -10px; }
+  margin-left: -10px; }
 
 .col {
-  padding-left: 20px / 2;
-  padding-right: 20px / 2; }
+  padding-right: 20px / 2;
+  padding-left: 20px / 2; }
   .col-12 {
-    width: 100%;
     width: 100%; }
   .col-8 {
-    width: 66.66667%;
-    width: 66.67%; }
+    width: 66.66667%; }
   .col-6 {
-    width: 50%;
     width: 50%; }
   .col-4 {
-    width: 33.33333%;
+    width: 33.33333%; }
+  .col-3 {
     width: 25%; }
-  @media (max-width: 500px) {
+  .col-1 {
+    width: 8.33333%; }
+  @media (max-width: 599px) {
     .col-sm-12 {
-      width: 100%;
-      width: 100%; } }
+      width: 100%; }
+    .col-sm-6 {
+      width: 50%; }
+    .col-sm-3 {
+      width: 25%; } }
+
+@media (min-width: 1200px) {
+  body {
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow-x: hidden; } }
+
+.offset-2 {
+  margin-left: 16.66667%; }
+
+@media (max-width: 599px) {
+  .offset-sm-0 {
+    margin-left: 0; } }

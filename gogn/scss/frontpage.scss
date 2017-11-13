@@ -20,35 +20,13 @@
       padding: 0;
       margin: 0;
   }
-
-.line{
-
+.line {
+    display: flex;
+    justify-content: center;
 }
-.list{
-display: flex;
-flex-flow: row;
-}
-/*Header er fyrir textan mynbandaleiga*/
-.header{
-  color: blue;
-}
-/*  fyrir hverja fyrirsögn s.s.nyleg myndbönd og kennslumyndbond */
-.title{
-  font-size: 10em;
-
-}
-/*unorded list */
-ul{
-  color: green;
-  display: flex;
-
-  /*ef media verður minni en 500 px þá wrap*/
-  @media(max-width: 500px){
-    flex-wrap: wrap;
-  }
-}
-/*fyrir hvert stak í listanum og þau eru 2 hér þarf að byrja að gera rad fyrir media*/
-li{
-
-
+img{
+    height: 100%;
+    padding: 25px 25px 25px 25px;
+    width: 100%;
+    object-fit: cover;
 }
