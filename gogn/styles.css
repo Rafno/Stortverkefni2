@@ -1,20 +1,6 @@
 @charset "UTF-8";
 /*Þetta sass mun sjá um frontpageid*/
-<<<<<<< HEAD
-/*það er oll síðan*/
-/* red */
-html {
-  /*Bakgrunnur settur sem grar*/
-  background-color: rgba(0, 0, 0, 0.5);
-  color: #ff02ff;
-  max-width: 10px;
-  color: white;
-  font-size: 1em; }
 
-.a {
-  color: red;
-  background-color: blue; }
-=======
 /*það er öll síðan*/
 /* red */
 html {
@@ -26,7 +12,6 @@ html {
   margin-left: 20px;
   font-size: 16px;
   line-height: 1.5; }
->>>>>>> origin/master
 
 *, *:before, *:after {
   /* stylelint-disable-line */
@@ -47,10 +32,6 @@ html {
 .title {
   font-size: 10em; }
 
-<<<<<<< HEAD
-/*fyrir hverja fyrirsögn s.s.nyleg myndbönd og kennslumyndbond */
-=======
->>>>>>> origin/master
 /*unorded list */
 ul {
   color: green;
@@ -61,8 +42,6 @@ ul {
       flex-wrap: wrap; } }
 
 /*fyrir hvert stak í listanum og þau eru 2 hér þarf að byrja að gera rad fyrir media*/
-<<<<<<< HEAD
-=======
 .line {
   display: flex;
   justify-content: center; }
@@ -134,4 +113,4 @@ img {
 @media (max-width: 500px) and (max-width: 599px) {
   .col-sm .offset-sm-0 {
     margin-left: 0; } }
->>>>>>> origin/master
+
