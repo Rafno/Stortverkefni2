@@ -1,5 +1,6 @@
 @charset "UTF-8";
 /*Þetta sass mun sjá um frontpageid*/
+<<<<<<< HEAD
 /*það er oll síðan*/
 /* red */
 html {
@@ -13,17 +14,46 @@ html {
 .a {
   color: red;
   background-color: blue; }
+=======
+/*það er öll síðan*/
+/* red */
+html {
+  /* stylelint-disable-line */
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #ff02ff;
+  box-sizing: border-box;
+  margin-right: 20px;
+  margin-left: 20px;
+  font-size: 16px;
+  line-height: 1.5; }
+>>>>>>> origin/master
+
+*, *:before, *:after {
+  /* stylelint-disable-line */
+  box-sizing: inherit;
+  /* fjarlægjum margin og padding */
+  padding: 0;
+  margin: 0; }
+
+.line {
+  display: flex;
+  justify-content: flex-end; }
 
 /*Header er fyrir textan mynbandaleiga*/
-header {
-  display: flex;
-  justify-content: flex-start;
-  /*textinn skalaður sem font size 1em*/
-  font-size: 3em; }
+.header {
+  color: blue; }
 
+/*  fyrir hverja fyrirsögn s.s.nyleg myndbönd og kennslumyndbond */
+.title {
+  font-size: 10em; }
+
+<<<<<<< HEAD
 /*fyrir hverja fyrirsögn s.s.nyleg myndbönd og kennslumyndbond */
+=======
+>>>>>>> origin/master
 /*unorded list */
 ul {
+  color: green;
   display: flex;
   /*ef media verður minni en 500 px þá wrap*/ }
   @media (max-width: 500px) {
@@ -31,3 +61,77 @@ ul {
       flex-wrap: wrap; } }
 
 /*fyrir hvert stak í listanum og þau eru 2 hér þarf að byrja að gera rad fyrir media*/
+<<<<<<< HEAD
+=======
+.line {
+  display: flex;
+  justify-content: center; }
+
+img {
+  height: 100%;
+  padding: 25px 25px 25px 25px;
+  width: 100%;
+  object-fit: cover; }
+
+.videos__container {
+  width: 100%; }
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -10px;
+  margin-bottom: 20px;
+  margin-left: -10px; }
+
+.col {
+  padding-left: 20px / 2;
+  padding-right: 20px / 2; }
+  .col-12 {
+    width: 100%;
+    max-width: 100%; }
+  .col-8 {
+    width: 66.66667%;
+    width: 66.67%; }
+  .col-6 {
+    width: 50%;
+    width: 50%; }
+  .col-4 {
+    width: 33.33333%;
+    width: 25%; }
+  @media (max-width: 500px) {
+    .col-sm-12 {
+      padding-right: 20px / 2;
+      padding-left: 20px / 2; }
+      .col-sm-12-12 {
+        width: 100%; }
+      .col-sm-12-8 {
+        width: 66.66667%; }
+      .col-sm-12-6 {
+        width: 50%; }
+      .col-sm-12-4 {
+        width: 33.33333%; }
+      .col-sm-12-3 {
+        width: 25%; }
+      .col-sm-12-1 {
+        width: 8.33333%; } }
+  @media (max-width: 500px) and (max-width: 599px) {
+    .col-sm-12-sm-12 {
+      width: 100%; }
+    .col-sm-12-sm-6 {
+      width: 50%; }
+    .col-sm-12-sm-3 {
+      width: 25%; } }
+
+@media (max-width: 500px) and (min-width: 1200px) {
+  .col-sm body {
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow-x: hidden; } }
+  @media (max-width: 500px) {
+    .col-sm .offset-2 {
+      margin-left: 16.66667%; } }
+
+@media (max-width: 500px) and (max-width: 599px) {
+  .col-sm .offset-sm-0 {
+    margin-left: 0; } }
+>>>>>>> origin/master
