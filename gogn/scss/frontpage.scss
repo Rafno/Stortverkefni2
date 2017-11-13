@@ -1,39 +1,51 @@
 /*Þetta sass mun sjá um frontpageid*/
 /*það er öll síðan*/
    /* red */
-html{
-  /*Bakgrunnur settur sem grar*/
-  background-color: rgba(0, 0, 0, 0.5);
-  color: rgba(255, 2, 255, 1);
-  max-width: 10px;
+     html {
+      /* stylelint-disable-line */
+      background-color: rgba(0, 0, 0, 0.8);
+      color: rgba(255, 2, 255, 1);
+      box-sizing: border-box;
+      margin-right: 20px;
+      margin-left: 20px;
+    //  font-family: 'Open Sans', sans-serif;
+      font-size: 16px;
+      line-height: 1.5;
+  }
 
-  //allur texti settur sem hvítur
-  color: white;
-  font-size: 1em;
+  *, *:before, *:after {
+      /* stylelint-disable-line */
+      box-sizing: inherit;
+      /* fjarlægjum margin og padding */
+      padding: 0;
+      margin: 0;
+  }
+
+.line{
+
 }
-a{
-  color: green;
-  background-color: blue;
+.list{
+display: flex;
+flex-flow: row;
 }
 /*Header er fyrir textan mynbandaleiga*/
-header{
-  display: flex;
-  justify-content: flex-start;
-  /*textinn skalaður sem font size 1em*/
-  font-size: 3em;
+.header{
+  color: blue;
 }
-/*fyrir hverja fyrirsögn s.s.nyleg myndbönd og kennslumyndbond */
-title{
+/*  fyrir hverja fyrirsögn s.s.nyleg myndbönd og kennslumyndbond */
+.title{
+  font-size: 10em;
 
 }
 /*unorded list */
 ul{
+  color: green;
   display: flex;
+
   /*ef media verður minni en 500 px þá wrap*/
   @media(max-width: 500px){
     flex-wrap: wrap;
   }
-
 }
 /*fyrir hvert stak í listanum og þau eru 2 hér þarf að byrja að gera rad fyrir media*/
 li{

@@ -1,30 +1,72 @@
-﻿@charset "UTF-8";
-/*her tharf ad koma eitthvad, held eg. eg kann ekki nogu vel a scss.*/
+@charset "UTF-8";
 /*Þetta sass mun sjá um frontpageid*/
 /*það er öll síðan*/
 /* red */
 html {
-    /*Bakgrunnur settur sem grar*/
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    color: white;
-    font-size: 4em;
-}
+  /* stylelint-disable-line */
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #ff02ff;
+  box-sizing: border-box;
+  margin-right: 20px;
+  margin-left: 20px;
+  font-size: 16px;
+  line-height: 1.5; }
+
+*, *:before, *:after {
+  /* stylelint-disable-line */
+  box-sizing: inherit;
+  /* fjarlægjum margin og padding */
+  padding: 0;
+  margin: 0; }
+
+.list {
+  display: flex;
+  flex-flow: row; }
 
 /*Header er fyrir textan mynbandaleiga*/
-header {
-  display: flex;
-  justify-content: flex-start;
-  /*textinn skalaður sem font size 1em*/
-  font-size: 3em; }
+.header {
+  color: blue; }
 
-/*fyrir hverja fyrirsögn s.s.nýleg myndbönd og kennslumyndbönd */
+/*  fyrir hverja fyrirsögn s.s.nyleg myndbönd og kennslumyndbond */
+.title {
+  font-size: 10em; }
+
 /*unorded list */
 ul {
+  color: green;
   display: flex;
   /*ef media verður minni en 500 px þá wrap*/ }
   @media (max-width: 500px) {
     ul {
       flex-wrap: wrap; } }
 
-/*fyrir hvert stak í listanum og þau eru 2 hér þarf að byrja að gera ráð fyrir media*/
+/*fyrir hvert stak í listanum og þau eru 2 hér þarf að byrja að gera rad fyrir media*/
+.videos__container {
+  width: 100%; }
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  margin-left: -10px;
+  margin-right: -10px; }
+
+.col {
+  padding-left: 20px / 2;
+  padding-right: 20px / 2; }
+  .col-12 {
+    width: 100%;
+    width: 100%; }
+  .col-8 {
+    width: 66.66667%;
+    width: 66.67%; }
+  .col-6 {
+    width: 50%;
+    width: 50%; }
+  .col-4 {
+    width: 33.33333%;
+    width: 25%; }
+  @media (max-width: 500px) {
+    .col-sm-12 {
+      width: 100%;
+      width: 100%; } }
