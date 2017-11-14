@@ -1,4 +1,8 @@
 @charset "UTF-8";
+/*Þetta sass mun sjá um frontpageid*/
+
+/*það er öll síðan*/
+/* red */
 html {
   display: flex;
   /* stylelint-disable-line */
@@ -99,3 +103,21 @@ img {
       width: 100%; }
     .col-sm-12-sm-6 {
       width: 50%; } }
+=======
+      width: 50%; }
+    .col-sm-12-sm-3 {
+      width: 25%; } }
+
+@media (max-width: 500px) and (min-width: 1200px) {
+  .col-sm body {
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow-x: hidden; } }
+  @media (max-width: 500px) {
+    .col-sm .offset-2 {
+      margin-left: 16.66667%; } }
+
+@media (max-width: 500px) and (max-width: 599px) {
+  .col-sm .offset-sm-0 {
+    margin-left: 0; } }
+
