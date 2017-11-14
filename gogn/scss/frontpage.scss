@@ -1,66 +1,38 @@
 /*Þetta sass mun sjá um frontpageid*/
 /*það er öll síðan*/
    /* red */
-     html {
-      /* stylelint-disable-line */
-      background-color: rgba(0, 0, 0, 0.8);
-      color: rgba(255, 2, 255, 1);
-      box-sizing: border-box;
-      margin-right: 20px;
-      margin-left: 20px;
-    //  font-family: 'Open Sans', sans-serif;
-      font-size: 16px;
-      line-height: 1.5;
-  }
-
-  *, *:before, *:after {
-      /* stylelint-disable-line */
-      box-sizing: inherit;
-      /* fjarlægjum margin og padding */
-      padding: 0;
-      margin: 0;
-  }
-
-.line{
-  display: flex;
-  justify-content: flex-end;
-
+.category{
+  padding: 20px;
 }
-.list{
-
-}
-/*Header er fyrir textan mynbandaleiga*/
-.header{
-  color: blue;
-}
-/*  fyrir hverja fyrirsögn s.s.nyleg myndbönd og kennslumyndbond */
-.title{
-  font-size: 10em;
-
-}
-/*unorded list */
-ul{
-  color: green;
-  display: flex;
-
-  /*ef media verður minni en 500 px þá wrap*/
-  @media(max-width: 500px){
-    flex-wrap: wrap;
-  }
-}
-/*fyrir hvert stak í listanum og þau eru 2 hér þarf að byrja að gera rad fyrir media*/
-li{
-
-    }
-
-.line {
+.flex-Line{
+//  padding: 25px;
+  @media(min-width: 600px){
     display: flex;
-    justify-content: center;
+    flex-flow: nowrap;
+  }
+  &-item{
+    padding: 10px;
+  }
 
 }
+.seperator{
+padding: 30px;
+margin-left: 8%;
+margin-right: 8%;
+border-bottom: solid 1px;
+}
+.single{
+  padding: 25px;
+  @media (min-width: 600px){
+    display: flex;
+    flex-flow: nowrap;
+    max-width: 50%;
+  }
+}
+
 img{
     height: 100%;
-    padding: 25px 25px 25px 25px;
+    //margin:20px 20px 20px 20px;
     width: 100%;
     object-fit: cover;
 }
