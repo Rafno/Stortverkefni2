@@ -1,10 +1,9 @@
 @charset "UTF-8";
 html {
   display: flex;
+  color: white;
   /* stylelint-disable-line */
-  max-width: 75em;
   background-color: rgba(0, 0, 0, 0.8);
-  color: #ff02ff;
   /*    box-sizing: border-box;
  max-width: 1200px;
  margin-right: 20px;
@@ -14,47 +13,6 @@ html {
  line-height: 1.5;
  display: flex;
 */ }
-
-.p {
-  font-size: 50em;
-  color: white; }
-
-/*, *:before, *:after {
-//      /* stylelint-disable-line */
-/* fjarlægjum margin og padding */
-/*  Þetta sass mun sjá um frontpageid */
-/*  það er oll síðan  */
-/* red */
-.category {
-  padding: 20px; }
-
-@media (min-width: 600px) {
-  .flex-Line {
-    display: flex;
-    flex-flow: nowrap; } }
-
-.flex-Line-item {
-  padding: 10px; }
-
-.seperator {
-  padding: 30px;
-  margin-left: 8%;
-  margin-right: 8%;
-  border-bottom: solid 1px; }
-
-@media (min-width: 600px) {
-  .single {
-    display: flex;
-    flex-flow: nowrap;
-    max-width: 50%; } }
-
-img {
-  height: 100%;
-  width: 100%;
-  object-fit: cover; }
-
-.videos__container {
-  width: 100%; }
 
 .row {
   display: flex;
@@ -97,3 +55,41 @@ img {
       width: 100%; }
     .col-sm-12-sm-6 {
       width: 50%; } }
+
+/*  Þetta sass mun sjá um frontpageid */
+/*  það er oll síðan  */
+/* red */
+h2 {
+  /* stylelint disable Line */
+  font-size: 2.5em; }
+
+p {
+  font-size: 1.5em; }
+
+@media (min-width: 600px) {
+  .flex-Line {
+    display: flex;
+    flex-flow: nowrap; } }
+
+.flex-Line-item {
+  padding: 10px; }
+
+.seperator {
+  padding: 30px;
+  margin-left: 8%;
+  margin-right: 8%;
+  border-bottom: solid 1px; }
+
+@media (min-width: 600px) {
+  .single {
+    display: flex;
+    flex-flow: nowrap;
+    max-width: 50%; } }
+
+img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover; }
+
+.videos__container {
+  width: 100%; }

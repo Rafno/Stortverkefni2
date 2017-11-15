@@ -1,11 +1,13 @@
 /*  Þetta sass mun sjá um frontpageid */
 /*  það er oll síðan  */
    /* red */
-.category{
-  padding: 20px;
+h2{/* stylelint disable Line */
+  font-size: 2.5em;
+}
+p{* stylelint disable Line */
+  font-size: 1.5em;
 }
 .flex-Line{
-//  padding: 25px;
   @media(min-width: 600px){
     display: flex;
     flex-flow: nowrap;
@@ -22,7 +24,6 @@ margin-right: 8%;
 border-bottom: solid 1px;
 }
 .single{
-  //padding: 25px;
   @media (min-width: 600px){
     display: flex;
     flex-flow: nowrap;
