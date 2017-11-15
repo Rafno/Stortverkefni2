@@ -165,11 +165,34 @@ const pDaysAgo6 = createElement("p", "flex-line-daysAgo")
 pDaysAgo6.appendChild(document.createTextNode("PLACEHOLDER - 300 ár síðan"));
 flexLineRight4.appendChild(pDaysAgo6);
 
+//<----------------Skipting a haegri og vinstri ---------left2----------->
+const flexLineItem7 = flexLine3.appendChild(createElement("div", "flex-line-item"));
+const flexLineLeft3 = flexLineItem7.appendChild(createElement("div", "flex-Line-Left"));
+
+flexLineLeft3.appendChild(makePic("/videos/16-9.png"));
+
+const pTitle7 = createElement("p", "flex-line-title");
+flexLineLeft3.appendChild(pTitle7);
+pTitle7.appendChild(document.createTextNode("PLACEHOLDER - Prufumyndband!"));
+const pDaysAgo7 = createElement("p", "flex-line-daysAgo")
+pDaysAgo7.appendChild(document.createTextNode("PLACEHOLDER - 300 ár síðan"));
+flexLineLeft3.appendChild(pDaysAgo7);
 
 
+//<---------------Single and ready to mingle------------>
+const singleDiv = createElement("div", "single");
+gridDiv.appendChild(singleDiv);
 
+const flexLineItem8 = singleDiv.appendChild(createElement("div", "flex-line-item"));
+const flexLineRight5 = flexLineItem8.appendChild(createElement("div", "flex-Line-Right"));
+flexLineRight5.appendChild(makePic("/videos/16-9.png"));
 
-
+const pTitle8 = createElement("p", "flex-line-title");
+flexLineRight5.appendChild(pTitle8);
+pTitle8.appendChild(document.createTextNode("PLACEHOLDER - Prufumyndband!"));
+const pDaysAgo8 = createElement("p", "flex-line-daysAgo")
+pDaysAgo8.appendChild(document.createTextNode("PLACEHOLDER - 300 ár síðan"));
+flexLineRight5.appendChild(pDaysAgo8);
 
 /**
  * Async, laga med hjalp
