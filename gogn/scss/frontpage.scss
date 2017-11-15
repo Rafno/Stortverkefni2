@@ -12,7 +12,6 @@ p {
 }
 
 .flex-Line {
-  
   display: flex;
   // ekki hærra en 499px
   @media(max-width: 999px)and(min-width: 705px) {
