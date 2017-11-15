@@ -64,9 +64,10 @@ h2 {
   font-size: 2.5em; }
 
 p {
+  /* stylelint disable Line */
   font-size: 1.5em; }
 
-@media (min-width: 600px) {
+@media (min-width: 500px) {
   .flex-Line {
     display: flex;
     flex-flow: nowrap; } }
@@ -80,7 +81,7 @@ p {
   margin-right: 8%;
   border-bottom: solid 1px; }
 
-@media (min-width: 600px) {
+@media (min-width: 500px) {
   .single {
     display: flex;
     flex-flow: nowrap;
