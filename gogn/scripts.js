@@ -25,7 +25,7 @@ function createElement( element, attribute){
 /**
  * Byr til grid sem heldur utan um allt index hja okkur, baetir vid header, sem inniheldur
  * h2 sem hefur klasan category.
- *
+ * 
  * grid
  *  ├ header
  *  │  └h2 - category
@@ -42,7 +42,7 @@ h2Title.appendChild(document.createTextNode("Nýleg Myndbönd"));
 /**
 * FlexLine1 heldur utan um fyrstu linuna okkar, thar sting eg inn 2 myndum.
  * asamt textanum sem er hardkodadur.
-* Skipt nidur i 2 flex-Line-item thar sem mynd, title og daysAgo koma inn.
+* Skipt nidur i 2 flex-line-item thar sem mynd, title og daysAgo koma inn.
 * TODO (Na ad leysa async vandarmal til ad saekja gogn ur videos.json)
 * Fylgir alltaf sama formatti:
 * bua til line ef ekki til
@@ -52,7 +52,7 @@ h2Title.appendChild(document.createTextNode("Nýleg Myndbönd"));
 */
 const flexLine1 = gridDiv.appendChild(createElement("div", "flex-Line"));
 
-const flexLineItem1 = flexLine1.appendChild(createElement("div", "flex-Line-item"));
+const flexLineItem1 = flexLine1.appendChild(createElement("div", "flex-line-item"));
 const flexLineLeft1 = flexLineItem1.appendChild(createElement("div", "flex-Line-Left"));
 
 flexLineLeft1.appendChild(makePic("/videos/small.png"));
@@ -64,9 +64,9 @@ const pDaysAgo1 = createElement("p", "flex-line-daysAgo")
 pDaysAgo1.appendChild(document.createTextNode("PLACEHOLDER - 300 ár síðan"));
 flexLineLeft1.appendChild(pDaysAgo1);
 /**
- * seinna flex-Line-item buid til.
+ * seinna flex-line-item buid til.
  */
-const flexLineItem2 = flexLine1.appendChild(createElement("div", "flex-Line-item"));
+const flexLineItem2 = flexLine1.appendChild(createElement("div", "flex-line-item"));
 const flexLineRight1 = flexLineItem2.appendChild(createElement("div", "flex-Line-Right"));
 
 
@@ -93,7 +93,7 @@ const flexLine2 = gridDiv.appendChild(createElement("div", "flex-Line"));
 * og tad sem var fyrir ofan.
 */
 
-const flexLineItem3 = flexLine2.appendChild(createElement("div", "flex-Line-item"));
+const flexLineItem3 = flexLine2.appendChild(createElement("div", "flex-line-item"));
 const flexLineRight2 = flexLineItem3.appendChild(createElement("div", "flex-Line-Right"));
 
 flexLineRight2.appendChild(makePic("/videos/small.png"));
@@ -107,7 +107,7 @@ flexLineRight2.appendChild(pDaysAgo3);
 /*
 * Skiptum haegri og vinstri bara aftvi tad pirrar Rafnar -Helgi
 */
-const flexLineItem4 = flexLine2.appendChild(createElement("div", "flex-Line-item"));
+const flexLineItem4 = flexLine2.appendChild(createElement("div", "flex-line-item"));
 const flexLineLeft2 = flexLineItem4.appendChild(createElement("div", "flex-Line-Left"));
 
 flexLineLeft2.appendChild(makePic("/videos/16-9.png"));
@@ -127,7 +127,7 @@ gridDiv.appendChild(hvadErSingle);
 
 //eg vildi oska eg kynni a jquery til ad eg gaeti notad clone().
 
-const flexLineItem5 = hvadErSingle.appendChild(createElement("div", "flex-Line-item"));
+const flexLineItem5 = hvadErSingle.appendChild(createElement("div", "flex-line-item"));
 const flexLineRight3 = flexLineItem5.appendChild(createElement("div", "flex-Line-Right"));
 
 flexLineRight3.appendChild(makePic("/videos/16-9.png"));
@@ -153,7 +153,7 @@ const flexLine3 = gridDiv.appendChild(createElement("div", "flex-Line"));
 * og tad sem var fyrir ofan.
 */
 
-const flexLineItem6 = flexLine3.appendChild(createElement("div", "flex-Line-item"));
+const flexLineItem6 = flexLine3.appendChild(createElement("div", "flex-line-item"));
 const flexLineRight4 = flexLineItem6.appendChild(createElement("div", "flex-Line-Right"));
 
 flexLineRight4.appendChild(makePic("/videos/bunny.png"));
@@ -166,7 +166,7 @@ pDaysAgo6.appendChild(document.createTextNode("PLACEHOLDER - 300 ár síðan"));
 flexLineRight4.appendChild(pDaysAgo6);
 
 //<----------------Skipting a haegri og vinstri ---------left2----------->
-const flexLineItem7 = flexLine3.appendChild(createElement("div", "flex-Line-item"));
+const flexLineItem7 = flexLine3.appendChild(createElement("div", "flex-line-item"));
 const flexLineLeft3 = flexLineItem7.appendChild(createElement("div", "flex-Line-Left"));
 
 flexLineLeft3.appendChild(makePic("/videos/16-9.png"));
@@ -183,7 +183,7 @@ flexLineLeft3.appendChild(pDaysAgo7);
 const singleDiv = createElement("div", "single");
 gridDiv.appendChild(singleDiv);
 
-const flexLineItem8 = singleDiv.appendChild(createElement("div", "flex-Line-item"));
+const flexLineItem8 = singleDiv.appendChild(createElement("div", "flex-line-item"));
 const flexLineRight5 = flexLineItem8.appendChild(createElement("div", "flex-Line-Right"));
 flexLineRight5.appendChild(makePic("/videos/16-9.png"));
 
@@ -224,3 +224,6 @@ fetchAsync()
     const days = parseInt(result.videos[0].created);
   });
 */
+
+
+

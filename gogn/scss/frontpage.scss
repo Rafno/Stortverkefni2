@@ -1,59 +1,39 @@
 /*  Þetta sass mun sjá um frontpageid */
 /*  það er oll síðan  */
-/* red */
-h2 {
-  /* stylelint disable Line */
+   /* red */
+h2{/* stylelint disable Line */
   font-size: 2.5em;
 }
-
-p {
-  /* stylelint disable Line */
+p{/* stylelint disable Line */
   font-size: 1.5em;
 }
-
-.flex-Line {
-  display: flex;
-  // ekki hærra en 499px
-  @media(max-width: 999px)and(min-width: 705px) {
-    background-color: red;
+.flex-Line{
+  @media(min-width: 500px){
+    display: flex;
     flex-flow: nowrap;
   }
-  @media(max-width: 700px) {
-    background-color: green;
-    flex-flow: wrap;
-    display: flex;
+  &-item{
+    padding: 10px;
   }
-//ekki hærra en 999 px og ekki minna en 500px
 
-  &-item {
-    margin: 10px;
-    @media(max-width:499px ) {
-    //  width: 100%;
-    }
-    @media(max-width: 999px) and (min-width: 500px) {
-      max-width: 600px;
-    }
-  }
 }
-
-.seperator {
-  padding: 30px;
-  margin-left: 8%;
-  margin-right: 8%;
-  border-bottom: solid 1px;
+.seperator{
+padding: 30px;
+margin-left: 8%;
+margin-right: 8%;
+border-bottom: solid 1px;
 }
-/*
-.single {
-  @media (min-width: 500px) {
+.single{
+  @media (min-width: 500px){
     display: flex;
     flex-flow: nowrap;
     max-width: 50%;
   }
 }
-*/
-img {
-  height: 100%;
-  //margin:20px 20px 20px 20px;
-  width: 100%;
-  object-fit: cover;
+
+img{
+    height: 100%;
+    //margin:20px 20px 20px 20px;
+    width: 100%;
+    object-fit: cover;
 }
