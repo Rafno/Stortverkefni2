@@ -3,6 +3,9 @@
 
 body { // stylelint-disable-line
 }
+main{// stylelint-disable-line
+  width: 1400px;
+}
 html {
   display: flex;
   color: white;
@@ -21,7 +24,7 @@ background-color: rgba(0, 0, 0, 0.8);
  display: flex;
 */  //justify-content: center;
 }
-
+@import "scss/videos";
 @import "scss/animation";
 @import "scss/grid";
 @import "scss/frontpage";
