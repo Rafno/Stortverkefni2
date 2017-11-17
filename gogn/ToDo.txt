@@ -1,21 +1,21 @@
 Frontpage.scss
-	1. Laga Margin
-	2. laga media ??
-	3. text owerflow hidden
-	4. Bakgrunn rgba(0, 0, 0, 0.5)
-	5. #eee seperator color 
-	6. find a reason for rigtht and left
+	1. Laga Margin ++
+	2. laga media ?? ++
+	3. text owerflow hidden ?
+	4. Bakgrunn rgba(0, 0, 0, 0.5) ?
+	5. #eee seperator color ++
+	6. find a reason for rigtht and left Hell fucking yeah ++
 Script.js
 	1. a href
-	2. Klára fetch
+	2. Klï¿½ra fetch
 	3. replace placeholder
-	4. búa til date Objecrt
-	5. finna mun frá þvi þegar það var sett inn
+	4. bï¿½a til date Objecrt
+	5. finna mun frï¿½ ï¿½vi ï¿½egar ï¿½aï¿½ var sett inn
 
 videos.js
-	1. tengjast við video json
-	2. búa til video player
+	1. tengjast viï¿½ video json
+	2. bï¿½a til video player
 
 videos.html
-	1. gera síðuna 
-	2. tengja við js
+	1. gera sï¿½ï¿½una
+	2. tengja viï¿½ js

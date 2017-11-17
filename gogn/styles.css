@@ -2,6 +2,7 @@
 html {
   display: flex;
   color: white;
+  min-width: 490px;
   /* stylelint-disable-line */
   background-color: rgba(0, 0, 0, 0.8);
   /*    box-sizing: border-box;
@@ -14,14 +15,38 @@ html {
  display: flex;
 */ }
 
+.flex-Line-Lefter {
+  animation-duration: 3s;
+  animation-name: slideLefter; }
+
+@keyframes slideLefter {
+  from {
+    margin-left: 100%;
+    width: 300%; }
+  to {
+    margin-left: 0;
+    width: 100%; } }
+
+/**************************/
+.flex-Line-Righter {
+  animation-duration: 3s;
+  animation-name: slideRighter; }
+
+@keyframes slideRighter {
+  from {
+    margin-right: 100%;
+    width: 300%; }
+  to {
+    margin-right: 0;
+    width: 100%; } }
+
 .row {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   margin-right: -10px;
   margin-bottom: 20px;
-  margin-left: -10px;
-  max-width: 75em; }
+  margin-left: -10px; }
 
 .col {
   padding-left: 20px / 2;
@@ -83,7 +108,7 @@ p {
     padding: 10px; }
     @media (min-width: 1000px) {
       .flex-Line-item {
-        color: green; } }
+        width: 33%; } }
     @media (min-width: 501px) and (max-width: 999px) {
       .flex-Line-item {
         width: 40%; } }
@@ -92,7 +117,8 @@ p {
   padding: 30px;
   margin-left: 8%;
   margin-right: 8%;
-  border-bottom: solid 1px; }
+  border-bottom: solid 1px;
+  color: #eee; }
 
 img {
   height: 100%;
