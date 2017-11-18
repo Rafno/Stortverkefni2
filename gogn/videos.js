@@ -1,4 +1,4 @@
-// JavaScript source code
+
 "use strict";
 
 init();
@@ -6,145 +6,152 @@ init();
 function runTheWo(data){
 const main = document.querySelector('main');
 console.log("Run the world!");
-console.log(data.videos[1].title);
-/************************** Title**************************** */
-const bunny = data.videos[1].title;
+const id = 3;
+var teljari = 1;
+/************************** Title **************************** */
+const video = data.videos[id].video;
+const poster = data.videos[id].poster;
+const titill = data.videos[id].title;
 const title = createElement("div","Fyrirsogn");
 const txt = appendChild(title,"p","title");
-addTextToNode(txt,bunny);
+addTextToNode(txt,titill);
 main.appendChild(title);
 
 /************************  Video   ****************************/
 
 const videoDiv = createElement("video", "videoDiv");
-videoDiv.setAttribute("src", "videos/bunny.mp4");
-videoDiv.setAttribute("width", "400");
-main.appendChild(videoDiv);
-
-/************************ Play Button ****************************/
+videoDiv.setAttribute("src", video);
 
 
-const playDiv = createElement("img", "img1");
-playDiv.setAttribute("src","/img/play.svg");
-appendChild(playDiv,"button","playDiv");
-main.appendChild(playDiv);
-
-/*****************Effect for play Button***********************/
-playDiv.addEventListener('click', function () {
-  console.log("button has been pressed");
-  videoDiv.play();
-});
-/*************** pause button *********************/
+const posterDiv = createElement("img", "videoDiv");
+posterDiv.setAttribute("src", poster);
+main.appendChild(posterDiv);
 
 
 
+/************container fyrir controls takkana*****************/
+const boxer = createElement("div","container");
+appendChild(boxer,"div","boxer");
+main.appendChild(boxer);
 
+/**************** Play button in the pic ***********************/
 
-
-
-
-
-
-
-const textpause = "Pause";
-const pauseDiv = createElement("button", "pause");
-//buttonDiv.setAttribute("src","img/play.svg");
-const nodepause = appendChild(pauseDiv,"button","pauseDiv");
-addTextToNode(nodepause,textpause);
-pauseDiv.setAttribute("width","200");
-main.appendChild(pauseDiv);
-
-/**************** Effect for Pause Button ***********************/
-pauseDiv.addEventListener('click', function () {
-  console.log("button has been pressed");
-  videoDiv.pause();
-});
-/**************** Mute Button **********************************/
-
-const textMute = "Mute";
-const muteDiv = createElement("buttoon", "buttonDiv");
-//buttonDiv.setAttribute("src","img/play.svg");
-const nodeMute = appendChild(muteDiv,"button","muteDiv");
-addTextToNode(nodeMute,textMute);
-muteDiv.setAttribute("width","200");
-main.appendChild(muteDiv);
-
-/**************** Effect for Muse Button ***********************/
-muteDiv.addEventListener('click', function () {
-  console.log("button has been pressed");
-  videoDiv.muted=true;
-
-
-
-});
-
-/************************ Unmute Button*********************************/
-
-
-const textUnMute = "UnMute";
-const UnmuteDiv = createElement("buttoon", "buttonDiv");
-//buttonDiv.setAttribute("src","img/play.svg");
-const nodeUnMute = appendChild(UnmuteDiv,"button","UnmuteDiv");
-addTextToNode(nodeUnMute,textUnMute);
-UnmuteDiv.setAttribute("width","200");
-main.appendChild(UnmuteDiv);
-
-/**************** Effect for unMute Button ***********************/
-UnmuteDiv.addEventListener('click', function () {
-  console.log("button has been pressed");
-videoDiv.muted=false;
-
-});
-
-/********************** Fast Forward Button ********************************/
-
-const textForward = " --> ";
-const forwardDiv = createElement("buttoon", "buttonDiv");
-//buttonDiv.setAttribute("src","img/play.svg");
-const nodeForward = appendChild(forwardDiv,"button","forwardDiv");
-addTextToNode(nodeForward,textForward);
-forwardDiv.setAttribute("width","200");
-main.appendChild(forwardDiv);
-
-/**************** Effect for Forward Button ***********************/
-forwardDiv.addEventListener('click', function () {
-  console.log("button has been pressed");
-  videoDiv.currentTime = videoDiv.currentTime+3;
-});
 
 /********************** Fast Back Button********************************/
 
-const textBack = " <-- ";
-const BackDiv = createElement("buttoon", "buttonDiv");
-//buttonDiv.setAttribute("src","img/play.svg");
-const nodeBack = appendChild(BackDiv,"button","BackDiv");
-addTextToNode(nodeBack,textBack);
-BackDiv.setAttribute("width","200");
-main.appendChild(BackDiv);
+const BackDiv = createElement("img", "pic");
+BackDiv.setAttribute("src","/img/back.svg");
+appendChild(BackDiv,"button","BackDiv");
+boxer .appendChild(BackDiv);
 
 /**************** Effect for Back Button ***********************/
 BackDiv.addEventListener('click', function () {
   console.log("button has been pressed");
   videoDiv.currentTime = videoDiv.currentTime-3;
 });
+/************************ Play Button ****************************/
+const playPauseDiv = createElement("img", "pic");
+playPauseDiv.setAttribute("src","/img/play.svg");
+appendChild(playPauseDiv,"button","playPauseDiv");
+boxer.appendChild(playPauseDiv);
+ /*********************** Play Button in videoDiv ****************/
+
+ const playDiv = createElement("img", "pic");
+ playDiv.setAttribute("src","/img/play.svg");
+ appendChild(playDiv,"button","playDiv");
+ main.appendChild(playDiv);
+/*****************Effect for play Button***********************/
+playPauseDiv.addEventListener('click', function () {
+  const mainreplace = main.childNodes[0];
+  if(teljari ===1){
+    main.removeChild(posterDiv);
+    main.appendChild(videoDiv);
+    main.appendChild(boxer);
+    main.appendChild(back);
+  }
+  teljari +=1;
+  console.log("button has been pressed");
+  const repl = boxer.childNodes[1];
+  if (videoDiv.paused) {
+    console.log("ýtt á play");
+    videoDiv.play();
+    playPauseDiv.setAttribute("src","/img/pause.svg");
+    playPauseDiv.replaceChild(repl, playPauseDiv.childNodes[1]);
+  }
+  else{
+    console.log("ýtt á pause");
+    videoDiv.pause();
+    playPauseDiv.setAttribute("src","/img/play.svg");
+    playPauseDiv.replaceChild(repl, playPauseDiv.childNodes[1]);
+  }
+});
+/************ Kassin sem sér um að fara aftur um síðu*******/
+const texti =" Til baka ";
+const back = createElement("div","backContainer");
+const texter = appendChild(back,"div","back");
+addTextToNode(texter,texti);
+main.appendChild(back);
+/******** Efecct fyir kassan sem fer aftur um eina síðu ******/
+back.addEventListener('click', function () {
+  console.log("button has been pressed");
+  window.location.href = ("index.html");
+});
+/************************ Unmute Button*********************************/
+
+const muterDiv = createElement("img", "pic");
+muterDiv.setAttribute("src","/img/mute.svg");
+appendChild(muterDiv,"button","muterDiv");
+boxer.appendChild(muterDiv);
+
+/**************** Effect for unMute Button ***********************/
+muterDiv.addEventListener('click', function () {
+  console.log("button has been pressed");
+  const replace = boxer.childNodes[2];
+  if(videoDiv.muted == false){
+    console.log("ýtt á mute");
+    videoDiv.muted = true;
+    muterDiv.setAttribute("src","/img/unmute.svg");
+    muterDiv.replaceChild(replace, muterDiv.childNodes[2]);
+      }
+  else{
+    videoDiv.muted = false;
+    muterDiv.setAttribute("src","/img/mute.svg");
+    muterDiv.replaceChild(replace, muterDiv.childNodes[2]);
+  }
+
+
+});
+
+
 /*********************** Full Button****************************/
 
-const textFull = " + ";
-const fulDiv = createElement("buttoon", "buttonDiv");
-//buttonDiv.setAttribute("src","img/play.svg");
-const nodeFul = appendChild(fulDiv,"button","fulkDiv");
-addTextToNode(nodeFul,textFull);
-fulDiv.setAttribute("width","200");
-main.appendChild(fulDiv);
+const fulDiv = createElement("img", "pic");
+fulDiv.setAttribute("src","/img/fullscreen.svg");
+appendChild(fulDiv,"button","fulkDiv");
+boxer .appendChild(fulDiv);
 /************************ Effect Full screen ***********************/
 fulDiv.addEventListener('click', function () {
   const requestFullScreen = videoDiv.requestFullscreen ||
   videoDiv.msRequestFullscreen || videoDiv.mozRequestFullScreen
   || videoDiv.webkitRequestFullscreen;
   requestFullScreen.call(videoDiv);
-  });
+});
+/********************** Fast Forward Button ********************************/
+
+
+const forwardDiv = createElement("img", "pic");
+forwardDiv.setAttribute("src","/img/next.svg");
+appendChild(forwardDiv,"button","forwardDiv");
+boxer.appendChild(forwardDiv);
+
+/**************** Effect for Forward Button ***********************/
+forwardDiv.addEventListener('click', function () {
+  console.log("button has been pressed");
+  videoDiv.currentTime = videoDiv.currentTime+3;
+});
 }
 
+/*Appen, addTetxt og create hjálparföll*/
 const createElement = function (element, className = "") {
   const div = document.createElement(element);
   div.setAttribute("class", className);
