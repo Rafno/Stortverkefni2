@@ -44,23 +44,9 @@ function runTheWorld(data) {
   // const container = main.appendChild(createElement("div", "gridd"));
   const container = appendChild(main, "div", "gridd");
   /* Creating header */
-  const containerHeader = container.appendChild(createElement("header"));
-  addTextToNode(containerHeader, "Myndbandaleigan");
-
-
-  /* Map over all categories */
-  for (let i = 0; i < data.categories.length; i++) {
-    const category = data.categories[i];
-    const h2 = container.appendChild(createElement("h2", "category"));
-    h2.appendChild(document.createTextNode(category.title));
-    const categoryContainer = container.appendChild(createElement("div", "flex-Line"));
-
-    for (let j = 0; j < data.categories[i].videos.length; j++) {
-      const videoContainer = categoryContainer.appendChild(createElement("div", "flex-line-item"));
-    }
-  }
-
-
+  const containerHeader = appendChild(container, "header");
+  const headerH2 = appendChild(containerHeader, "h2", "title");
+  addTextToNode(headerH2, "Myndbandaleigan");
   const categories = data.categories;
   const videos = data.videos;
 
@@ -71,46 +57,67 @@ function runTheWorld(data) {
     //create header for category
     const h2 = appendChild(container, "h2", "category");
     addTextToNode(h2, category.title);
-
     const categoryContainer = appendChild(container, "div", "flex-Line");
-    console.log('Has', filteredVideos.length, 'videos.');
+    const seperator = appendChild(container, "div", "seperator");
 
     // Map to iterate over category videos
     filteredVideos.map((video, index) => {
+      const leftyRighty = createElement("div", "");
+      if (index % 2 === 0) {
+        leftyRighty.setAttribute("Class", "flex-Line-Right");
+      } else {
+        leftyRighty.setAttribute("Class", "flex-Line-Left");
+      }
+      //By til timann
+      const videoCreated = currDate(video.created);
       // Create video div
-      const videoContainer = appendChild(categoryContainer, "div", "flex-line-item");
+      const videoContainer = appendChild(categoryContainer, "div", "flex-Line-item");
+      videoContainer.appendChild(leftyRighty);
       const aHref = createElement("a");
       aHref.setAttribute("href", "videos.html");
-      videoContainer.appendChild(aHref);
       const anImg = createElement("img");
       anImg.setAttribute("src", video.poster);
       aHref.appendChild(anImg);
-      const videoTitle = appendChild(videoContainer, "p", "flex-line-title");
-      const videoDate = appendChild(videoContainer, "p", "flex-line-daysAgo");
-      videoTitle.appendChild(document.createTextNode(video.title));
-      videoDate.appendChild(document.createTextNode(video.created));
-      const seperator = createElement("div", "seperator");
-      
+      leftyRighty.appendChild(aHref);
+      const videoTitle = appendChild(leftyRighty, "p", "flex-Line-title");
+      const videoDate = appendChild(leftyRighty, "p", "flex-Line-daysAgo");
+      addTextToNode(videoTitle, video.title);
+      addTextToNode(videoDate, videoCreated);
     });
   });
 }
 
-function currDate(remaining) {
+function currDate(created) {
   const currDate = new Date();
   const currmilli = currDate.getTime();
-  ///Gera mun
+  const remaining = (currmilli - created);
   /*  Dagar */
   const totalSecs = remaining / 1000;
   const days = Math.floor(totalSecs / (60 * 60 * 24));
+    if (days > 7) {
+     return ("fyrir " + Math.floor(days / 7) + " vikum sidan");
+   }
+    if (days > 1) {
+      return ("fyrir " + days + " dogum sidan ");
+    }
+    if (days === 1) {
+      return ("fyrir " + days + " degi sidan ");
+    }
   //klst
   const hours = Math.floor(totalSecs / 3600) % 24;
+    if (hours < 25) {
+      return ("fyrir " + hours + " klukkustundum sidan ");
+    }
   //mínútur
   const minutes = Math.floor(totalSecs / 60) % 60;
+    if (minutes < 61) {
+      return ("fyrir " + minutes + " minutum sidan ");
+    }
   //Sek
   const seconds = totalSecs % 60;
-
-  const diff = (currmilli - remaining);
-  console.log(diff);
+    if (minutes < 61) {
+      return ("fyrir " + seconds + " sekundum sidan ");
+    }
 }
 // Load the json data and then run the world
 async function init() {
