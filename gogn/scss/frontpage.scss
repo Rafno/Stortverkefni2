@@ -26,10 +26,10 @@ p {
   }
 
   &-item {
-    min-width: 490px;
+    //min-width: 490px;
     padding: 10px;
     @media(max-width: 500px) {
-      width: 100%;
+      width: 90%;
     }
     @media(min-width: 1000px) {
       width: 33%;
