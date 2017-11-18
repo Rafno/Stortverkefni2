@@ -54,12 +54,7 @@ const playPauseDiv = createElement("img", "pic");
 playPauseDiv.setAttribute("src","/img/play.svg");
 appendChild(playPauseDiv,"button","playPauseDiv");
 boxer.appendChild(playPauseDiv);
- /*********************** Play Button in videoDiv ****************/
 
- const playDiv = createElement("img", "pic");
- playDiv.setAttribute("src","/img/play.svg");
- appendChild(playDiv,"button","playDiv");
- main.appendChild(playDiv);
 /*****************Effect for play Button***********************/
 playPauseDiv.addEventListener('click', function () {
   const mainreplace = main.childNodes[0];
