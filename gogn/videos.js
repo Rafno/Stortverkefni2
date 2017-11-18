@@ -1,12 +1,11 @@
-
 "use strict";
-
-init();
-
-function runTheWo(data){
+const url = window.location.href.split('?')[1];
+const urlSplit = window.location.href.split('=')[1];
+console.log(urlSplit);
+function runTheWo(data) {
 const main = document.querySelector('main');
 console.log("Run the world!");
-const id = 3;
+const id = urlSplit;
 var teljari = 1;
 /************************** Title **************************** */
 const video = data.videos[id].video;
@@ -175,3 +174,4 @@ async function init(){
   .then(jsonData => runTheWo(jsonData))
   .catch(error => { console.log(error); return []});
 }
+init();
