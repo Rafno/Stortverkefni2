@@ -5,7 +5,7 @@
     margin-right: -(20px / 2);
     margin-bottom: 20px;
     margin-left: -(20px / 2);
-    max-width: 75em;
+  //  max-width: 75em;
 }
 
 // mixin sem reiknar nákvæmar prósentur útfrá dálkum
@@ -39,7 +39,7 @@
     }
 
     &-sm {
-        @media (max-width: 200px) {
+        @media (max-width: 800px) {
             &-12 {
                 padding-right: 20px / 2;
                 padding-left: 20px / 2;
@@ -69,7 +69,7 @@
                 }
 
                 &-sm {
-                    @media (max-width: 200px) {
+                    @media (max-width: 599px) {
                         &-12 {
                             @include columns(12);
                         }

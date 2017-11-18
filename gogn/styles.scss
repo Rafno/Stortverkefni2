@@ -3,9 +3,13 @@
 
 body { // stylelint-disable-line
 }
+main{// stylelint-disable-line
+  width: 1400px;
+}
 html {
   display: flex;
   color: white;
+  min-width: 490px;
  /* stylelint-disable-line */
 // max-width: 75em;
 background-color: rgba(0, 0, 0, 0.8);
@@ -20,8 +24,8 @@ background-color: rgba(0, 0, 0, 0.8);
  display: flex;
 */  //justify-content: center;
 }
-
-
+@import "scss/videos";
+@import "scss/animation";
 @import "scss/grid";
 @import "scss/frontpage";
 @import "scss/videos";

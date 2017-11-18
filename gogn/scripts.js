@@ -72,13 +72,6 @@ function runTheWorld(data) {
     const h2 = appendChild(container, "h2", "category");
     addTextToNode(h2, category.title);
 
-    
-    // create category div
-
-    //h2.appendChild(document.createTextNode(category.title));
-
-    //create category div
-
     const categoryContainer = appendChild(container, "div", "flex-Line");
     console.log('Has', filteredVideos.length, 'videos.');
 
