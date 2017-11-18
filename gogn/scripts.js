@@ -1,14 +1,14 @@
 // JavaScript source code
 "use strict";
 
-const createElement = function(element, className = "") {
+const createElement = function (element, className = "") {
   const div = document.createElement(element);
   div.setAttribute("class", className);
   return div;
 }
 
 const appendChild = function (node, elementType, className = "") {
-  // main.appendChild(createElement("div", "gridd"));
+  //main.appendChild(createElement("div", "gridd"));
   const div = document.createElement(elementType);
   div.setAttribute("class", className);
   return node.appendChild(div);
@@ -24,7 +24,7 @@ const addTextToNode = function (node, text) {
  * @returns {array of video objects}
  */
 const getVideosForCategory = (categoryVideoIds, videos) => {
-  // https://docs.microsoft.com/en-us/scripting/javascript/reference/filter-method-array-javascript
+  //https://docs.microsoft.com/en-us/scripting/javascript/reference/filter-method-array-javascript
   const filteredVideoArray = videos.filter((entryInArray) => {
     for (let i = 0; i < categoryVideoIds.length; i++) {
       if (categoryVideoIds[i] === entryInArray.id) {
@@ -34,14 +34,7 @@ const getVideosForCategory = (categoryVideoIds, videos) => {
     return false;
   });
   return filteredVideoArray;
-  /*
-   return videos.filter((video) => {
-      if (category.videos.includes(video.id)) {
-          return true;
-        }
-        return false;
-      })
-  */
+
 }
 
 function runTheWorld(data) {
@@ -54,6 +47,20 @@ function runTheWorld(data) {
   const containerHeader = container.appendChild(createElement("header"));
   addTextToNode(containerHeader, "Myndbandaleigan");
 
+
+  /* Map over all categories */
+  for (let i = 0; i < data.categories.length; i++) {
+    const category = data.categories[i];
+    const h2 = container.appendChild(createElement("h2", "category"));
+    h2.appendChild(document.createTextNode(category.title));
+    const categoryContainer = container.appendChild(createElement("div", "flex-Line"));
+
+    for (let j = 0; j < data.categories[i].videos.length; j++) {
+      const videoContainer = categoryContainer.appendChild(createElement("div", "flex-line-item"));
+    }
+  }
+
+
   const categories = data.categories;
   const videos = data.videos;
 
@@ -61,11 +68,17 @@ function runTheWorld(data) {
   categories.map((category) => {
     const filteredVideos = getVideosForCategory(category.videos, videos);
 
-    // create header for category
+    //create header for category
     const h2 = appendChild(container, "h2", "category");
     addTextToNode(h2, category.title);
+
     
     // create category div
+
+    //h2.appendChild(document.createTextNode(category.title));
+
+    //create category div
+
     const categoryContainer = appendChild(container, "div", "flex-Line");
     console.log('Has', filteredVideos.length, 'videos.');
 
@@ -89,6 +102,23 @@ function runTheWorld(data) {
   });
 }
 
+function currDate(remaining) {
+  const currDate = new Date();
+  const currmilli = currDate.getTime();
+  ///Gera mun
+  /*  Dagar */
+  const totalSecs = remaining / 1000;
+  const days = Math.floor(totalSecs / (60 * 60 * 24));
+  //klst
+  const hours = Math.floor(totalSecs / 3600) % 24;
+  //mínútur
+  const minutes = Math.floor(totalSecs / 60) % 60;
+  //Sek
+  const seconds = totalSecs % 60;
+
+  const diff = (currmilli - remaining);
+  console.log(diff);
+}
 // Load the json data and then run the world
 async function init() {
   let response = await fetch('videos.json');
