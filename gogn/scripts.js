@@ -74,7 +74,7 @@ function runTheWorld(data) {
       const videoContainer = appendChild(categoryContainer, "div", "flex-Line-item");
       videoContainer.appendChild(leftyRighty);
       const aHref = createElement("a");
-      aHref.setAttribute("href", "videos.html?id="+index);
+      aHref.setAttribute("href", "videos.html?id=" + index);
       const anImg = createElement("img");
       anImg.setAttribute("src", video.poster);
       aHref.appendChild(anImg);
@@ -86,7 +86,17 @@ function runTheWorld(data) {
     });
   });
 }
-
+/**
+ * TODO, klára.
+ * @param {int} seconds
+ * @returns formatted seconds for video player
+ */
+function duration(seconds) {
+  if (seconds > 59) {
+    return math.floor(seconds / 60);
+  }
+  else return seconds;
+}
 function currDate(created) {
   const currDate = new Date();
   const currmilli = currDate.getTime();
@@ -94,30 +104,30 @@ function currDate(created) {
   /*  Dagar */
   const totalSecs = remaining / 1000;
   const days = Math.floor(totalSecs / (60 * 60 * 24));
-    if (days > 7) {
-     return ("fyrir " + Math.floor(days / 7) + " vikum sidan");
-   }
-    if (days > 1) {
-      return ("fyrir " + days + " dogum sidan ");
-    }
-    if (days === 1) {
-      return ("fyrir " + days + " degi sidan ");
-    }
+  if (days > 7) {
+    return ("fyrir " + Math.floor(days / 7) + " vikum sidan");
+  }
+  if (days > 1) {
+    return ("fyrir " + days + " dogum sidan ");
+  }
+  if (days === 1) {
+    return ("fyrir " + days + " degi sidan ");
+  }
   //klst
   const hours = Math.floor(totalSecs / 3600) % 24;
-    if (hours < 25) {
-      return ("fyrir " + hours + " klukkustundum sidan ");
-    }
+  if (hours < 25) {
+    return ("fyrir " + hours + " klukkustundum sidan ");
+  }
   //mínútur
   const minutes = Math.floor(totalSecs / 60) % 60;
-    if (minutes < 61) {
-      return ("fyrir " + minutes + " minutum sidan ");
-    }
+  if (minutes < 61) {
+    return ("fyrir " + minutes + " minutum sidan ");
+  }
   //Sek
   const seconds = totalSecs % 60;
-    if (minutes < 61) {
-      return ("fyrir " + seconds + " sekundum sidan ");
-    }
+  if (minutes < 61) {
+    return ("fyrir " + seconds + " sekundum sidan ");
+  }
 }
 // Load the json data and then run the world
 async function init() {
