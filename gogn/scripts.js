@@ -50,23 +50,9 @@ function runTheWorld(data) {
   const main = document.querySelector("main");
   // const container = main.appendChild(createElement("div", "gridd"));
   const container = appendChild(main, "div", "gridd");
-
   /* Creating header */
   const containerHeader = container.appendChild(createElement("header"));
   addTextToNode(containerHeader, "Myndbandaleigan");
-
-  /* Map over all categories */
-  /* for (let i = 0; i < data.categories.length; i++) {
-    const category = data.categories[i];
-    const h2 = container.appendChild(createElement("h2", "category"));
-    h2.appendChild(document.createTextNode(category.title));
-    const categoryContainer = container.appendChild(createElement("div", "flex-Line"));
-
-    // Map over videos
-    for (let j = 0; j < data.categories[i].videos.length; j++) {
-      const videoContainer = categoryContainer.appendChild(createElement("div", "flex-line-item"));
-    }
-  } */
 
   const categories = data.categories;
   const videos = data.videos;
@@ -78,19 +64,27 @@ function runTheWorld(data) {
     // create header for category
     const h2 = appendChild(container, "h2", "category");
     addTextToNode(h2, category.title);
-    // h2.appendChild(document.createTextNode(category.title));
     
     // create category div
-    const categoryContainer = appendChild(container, "div", "flex-Line");2
+    const categoryContainer = appendChild(container, "div", "flex-Line");
     console.log('Has', filteredVideos.length, 'videos.');
 
     // Map to iterate over category videos
     filteredVideos.map((video, index) => {
       // Create video div
       const videoContainer = appendChild(categoryContainer, "div", "flex-line-item");
+      const aHref = createElement("a");
+      aHref.setAttribute("href", "videos.html");
+      videoContainer.appendChild(aHref);
+      const anImg = createElement("img");
+      anImg.setAttribute("src", video.poster);
+      aHref.appendChild(anImg);
       const videoTitle = appendChild(videoContainer, "p", "flex-line-title");
+      const videoDate = appendChild(videoContainer, "p", "flex-line-daysAgo");
       videoTitle.appendChild(document.createTextNode(video.title));
-      console.log('video', index + 1, 'name =', video.title);
+      videoDate.appendChild(document.createTextNode(video.created));
+      const seperator = createElement("div", "seperator");
+      
     });
   });
 }
