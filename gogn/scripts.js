@@ -118,10 +118,10 @@ function currDate(created) {
     return ("fyrir " + Math.floor(days / 365) + " árum síðan")
   }
   if (days > 30 && days < 60) {
-    return ("fyrir " + Math.floor(days / 365) + " mánuði síðan")
+    return ("fyrir " + Math.floor(days / 30) + " mánuði síðan")
   }
   if (days > 30) {
-    return ("fyrir " + Math.floor(days / 365) + " mánuðum síðan")
+    return ("fyrir " + Math.floor(days / 30) + " mánuðum síðan")
   }
   if (days > 7 && days < 14) {
     return ("fyrir " + Math.floor(days / 7) + "viku síðan")
