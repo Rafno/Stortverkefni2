@@ -17,10 +17,10 @@ html {
     .Fyrirsogn {
       font-size: 1.5em; } }
 
-.exit {
-  text-align: center;
+h2.headline {
+  display: flex;
   justify-content: center;
-  padding-left: 50%; }
+  width: 100%; }
 
 /*  Style fyror title*/
 /*  style for video and poster  */
@@ -66,7 +66,7 @@ html {
   top: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.2);
-  background-image: url(/img/play.svg);
+  background-image: url("/img/play.svg");
   background-size: 20% 20%;
   background-repeat: no-repeat;
   background-position: center;
@@ -91,14 +91,11 @@ p {
   overflow: hidden; }
 
 .durationDiv {
+  position: absolute;
   background-color: rgba(0, 0, 0, 0.5);
   padding: 0.25em 0.5em;
   border-radius: 0.2em;
-  margin-right: 1em;
-  margin-top: -3em;
-  z-index: 1000;
-  float: right;
-  position: relative; }
+  margin: 1em; }
 
 .flex-Line {
   display: flex; }
@@ -134,8 +131,7 @@ p {
 img {
   height: 100%;
   width: 100%;
-  object-fit: cover;
-  z-index: -1; }
+  object-fit: cover; }
 
 /*Style fyrir videos*/
 /*  style for the title   */
@@ -149,10 +145,10 @@ img {
     .Fyrirsogn {
       font-size: 1.5em; } }
 
-.exit {
-  text-align: center;
+h2.headline {
+  display: flex;
   justify-content: center;
-  padding-left: 50%; }
+  width: 100%; }
 
 /*  Style fyror title*/
 /*  style for video and poster  */
@@ -198,7 +194,7 @@ img {
   top: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.2);
-  background-image: url(/img/play.svg);
+  background-image: url("/img/play.svg");
   background-size: 20% 20%;
   background-repeat: no-repeat;
   background-position: center;
