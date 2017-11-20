@@ -19,3 +19,4 @@ videos.js
 videos.html
 	1. gera s��una
 	2. tengja vi� js
+Siggi fikta

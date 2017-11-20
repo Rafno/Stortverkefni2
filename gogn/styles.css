@@ -153,7 +153,16 @@ h2 {
 
 p {
   /* stylelint disable Line */
-  font-size: 1.5em; }
+  font-size: 1.5em;
+  width: 12em;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden; }
+
+.durationDiv {
+  position: absolute;
+  margin-top: 19%;
+  margin-left: 30%; }
 
 .flex-Line {
   display: flex; }

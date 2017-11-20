@@ -8,7 +8,6 @@ const createElement = function (element, className = "") {
 }
 
 const appendChild = function (node, elementType, className = "") {
-  //main.appendChild(createElement("div", "gridd"));
   const div = document.createElement(elementType);
   div.setAttribute("class", className);
   return node.appendChild(div);
@@ -77,10 +76,13 @@ function runTheWorld(data) {
       aHref.setAttribute("href", "videos.html?id=" + index);
       const anImg = createElement("img");
       anImg.setAttribute("src", video.poster);
+      const durDiv = appendChild(leftyRighty, "div", "durationDiv");
       aHref.appendChild(anImg);
       leftyRighty.appendChild(aHref);
       const videoTitle = appendChild(leftyRighty, "p", "flex-Line-title");
       const videoDate = appendChild(leftyRighty, "p", "flex-Line-daysAgo");
+      console.log(video.duration);
+      addTextToNode(durDiv, duration(video.duration));
       addTextToNode(videoTitle, video.title);
       addTextToNode(videoDate, videoCreated);
     });
@@ -91,12 +93,7 @@ function runTheWorld(data) {
  * @param {int} seconds
  * @returns formatted seconds for video player
  */
-function duration(seconds) {
-  if (seconds > 59) {
-    return math.floor(seconds / 60);
-  }
-  else return seconds;
-}
+
 function currDate(created) {
   const currDate = new Date();
   const currmilli = currDate.getTime();
