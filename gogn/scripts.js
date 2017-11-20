@@ -74,7 +74,7 @@ function runTheWorld(data) {
       aHref.setAttribute("href", "videos.html?id=" + index);
       const anImg = createElement("img");
       anImg.setAttribute("src", video.poster);
-      const durDiv = appendChild(leftyRighty, "div", "durationDiv");
+      const durDiv = appendChild(anImg, "div", "durationDiv");
       aHref.appendChild(anImg);
       leftyRighty.appendChild(aHref);
       const videoTitle = appendChild(leftyRighty, "p", "flex-Line-title");
