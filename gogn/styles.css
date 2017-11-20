@@ -134,8 +134,7 @@ p {
 img {
   height: 100%;
   width: 100%;
-  object-fit: cover;
-  z-index: -1; }
+  object-fit: cover; }
 
 /*Style fyrir videos*/
 /*  style for the title   */
