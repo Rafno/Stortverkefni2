@@ -75,7 +75,7 @@ h2.headline {
   top: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.2);
-  background-image: url(/img/play.svg);
+  background-image: url("/img/play.svg");
   background-size: 20% 20%;
   background-repeat: no-repeat;
   background-position: center;
@@ -229,7 +229,7 @@ h2.headline {
   top: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.2);
-  background-image: url(/img/play.svg);
+  background-image: url("/img/play.svg");
   background-size: 20% 20%;
   background-repeat: no-repeat;
   background-position: center;
