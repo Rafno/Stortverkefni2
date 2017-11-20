@@ -10,6 +10,11 @@
     font-size: 1.5em;
   }
 }
+.exit{
+  text-align: center;
+  justify-content: center;
+  padding-left: 50%;
+}
 /*  Style fyror title*/
 
 /*  style for video and poster  */
@@ -45,6 +50,7 @@
   cursor: pointer;
   font-size: 1.5em;
   display: flex;
+  font-weight: bold;
   justify-content: center;
 }
 .owerlay{
