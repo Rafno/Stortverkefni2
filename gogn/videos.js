@@ -17,6 +17,11 @@ addTextToNode(txt,titill);
 main.appendChild(title);
 
 /************************  Video   ****************************/
+const media = createElement("div", "media");
+main.appendChild(media);
+
+const owerlay = createElement("div","owerlay");
+media.appendChild(owerlay);
 
 const videoDiv = createElement("video", "videoDiv");
 videoDiv.setAttribute("src", video);
@@ -24,7 +29,7 @@ videoDiv.setAttribute("src", video);
 
 const posterDiv = createElement("img", "videoDiv");
 posterDiv.setAttribute("src", poster);
-main.appendChild(posterDiv);
+media.appendChild(posterDiv);
 
 
 
@@ -33,15 +38,33 @@ const boxer = createElement("div","container");
 appendChild(boxer,"div","boxer");
 main.appendChild(boxer);
 
-/**************** Play button in the pic ***********************/
 
+/*************** Effect fyrir play button in the img********************/
+/*owerlay.addEventListener('click',function(){
+  if(teljari ===1){
+    media.removeChild(posterDiv);
+    media.appendChild(videoDiv);
+    main.appendChild(boxer);
+    main.appendChild(back);
+  }
+  teljari +=1;
+  if(videoDiv.paused){
+    console.log("play");
+    videoDiv.play();
 
+  }
+  else{
+    console.log("pause");
+      videoDiv.pause();
+      console.log("ertu stopp");
+  }
+});
 /********************** Fast Back Button********************************/
 
 const BackDiv = createElement("img", "pic");
 BackDiv.setAttribute("src","/img/back.svg");
 appendChild(BackDiv,"button","BackDiv");
-boxer .appendChild(BackDiv);
+boxer.appendChild(BackDiv);
 
 /**************** Effect for Back Button ***********************/
 BackDiv.addEventListener('click', function () {
@@ -54,12 +77,11 @@ playPauseDiv.setAttribute("src","/img/play.svg");
 appendChild(playPauseDiv,"button","playPauseDiv");
 boxer.appendChild(playPauseDiv);
 
-/*****************Effect for play Button***********************/
-playPauseDiv.addEventListener('click', function () {
+function player(){
   const mainreplace = main.childNodes[0];
   if(teljari ===1){
-    main.removeChild(posterDiv);
-    main.appendChild(videoDiv);
+    media.removeChild(posterDiv);
+    media.appendChild(videoDiv);
     main.appendChild(boxer);
     main.appendChild(back);
   }
@@ -69,16 +91,24 @@ playPauseDiv.addEventListener('click', function () {
   if (videoDiv.paused) {
     console.log("ýtt á play");
     videoDiv.play();
+    document.querySelector(".owerlay").style.zIndex="-1";
     playPauseDiv.setAttribute("src","/img/pause.svg");
-    playPauseDiv.replaceChild(repl, playPauseDiv.childNodes[1]);
-  }
+    }
   else{
     console.log("ýtt á pause");
     videoDiv.pause();
+    document.querySelector(".owerlay").style.zIndex="+1";
     playPauseDiv.setAttribute("src","/img/play.svg");
-    playPauseDiv.replaceChild(repl, playPauseDiv.childNodes[1]);
+    console.log("ferðu hinfgar");
+  //  owerlay.style.backgroundImage = "url('/img/play.svg')";
   }
-});
+
+}
+/*****************Effect for play Button***********************/
+
+playPauseDiv.addEventListener('click', player);
+owerlay.addEventListener('click',player);
+
 /************ Kassin sem sér um að fara aftur um síðu*******/
 const texti =" Til baka ";
 const back = createElement("div","backContainer");
@@ -105,12 +135,12 @@ muterDiv.addEventListener('click', function () {
     console.log("ýtt á mute");
     videoDiv.muted = true;
     muterDiv.setAttribute("src","/img/unmute.svg");
-    muterDiv.replaceChild(replace, muterDiv.childNodes[2]);
+    //muterDiv.replaceChild(replace, muterDiv.childNodes[2]);
       }
   else{
     videoDiv.muted = false;
     muterDiv.setAttribute("src","/img/mute.svg");
-    muterDiv.replaceChild(replace, muterDiv.childNodes[2]);
+  //  muterDiv.replaceChild(replace, muterDiv.childNodes[2]);
   }
 
 

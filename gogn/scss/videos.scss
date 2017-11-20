@@ -4,8 +4,13 @@
   display: flex;
   justify-content: center;
   color: white;
-  font-size: 1em;
+  font-weight: bold;
+  font-size: 2em;
+  @media(max-width: 700px){
+    font-size: 1.5em;
+  }
 }
+/*  Style fyror title*/
 
 /*  style for video and poster  */
 .videoDiv{
@@ -13,13 +18,22 @@
   width:60%;
   margin-left: 20%;
   margin-right: 20%;
+  position: relative;
 }
 /*  style for svg   */
 .pic{
   padding: 6px;
-  width: 4%;
+  width: 7%;
   height: 4%;
+  @media(min-width: 1000px){
+    width: 5%;
+    height: 2%;
+  }
 }
+.media{
+  position: relative;
+}
+/*  Style for the play button inside the pictures*/
 /*  Style for the container that keeps the svg icons  */
 .container{
   padding:15px;
@@ -33,6 +47,20 @@
   display: flex;
   justify-content: center;
 }
-.pause{
+.owerlay{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
   background-color: rgba(0,0,0,0.2);
+  background-image: url(/img/play.svg);
+  background-size: 20% 20%;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 1;
+  @media(min-width: 1000px){
+    background-size: 20% 20%;
+  }
+
 }
