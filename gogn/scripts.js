@@ -77,10 +77,12 @@ function runTheWorld(data) {
       aHref.setAttribute("href", "videos.html?id=" + index);
       const anImg = createElement("img");
       anImg.setAttribute("src", video.poster);
+      const durDiv = appendChild(leftyRighty, "div", "durationDiv");
       aHref.appendChild(anImg);
       leftyRighty.appendChild(aHref);
       const videoTitle = appendChild(leftyRighty, "p", "flex-Line-title");
       const videoDate = appendChild(leftyRighty, "p", "flex-Line-daysAgo");
+      addTextToNode(durDiv, duration(video.duration));
       addTextToNode(videoTitle, video.title);
       addTextToNode(videoDate, videoCreated);
     });
@@ -91,13 +93,14 @@ function runTheWorld(data) {
  * @param {int} seconds
  * @returns formatted seconds for video player
  */
-function duration(seconds) {
-  if (seconds > 59) {
-    return math.floor(seconds / 60);
+function duration(duration) {
+  if (duration < 61) {
+    console.log("hae", "00:0",duration);
+    //return ("00:", duration);
   }
-  else return seconds;
 }
 function currDate(created) {
+  duration(5);
   const currDate = new Date();
   const currmilli = currDate.getTime();
   const remaining = (currmilli - created);
