@@ -1,18 +1,9 @@
 @charset "UTF-8";
 html {
-  display: flex;
-  color: white;
   /* stylelint-disable-line */
-  background-color: rgba(0, 0, 0, 0.8);
-  /*    box-sizing: border-box;
- max-width: 1200px;
- margin-right: 20px;
- margin-left: 20px;
-//  font-family: 'Open Sans', sans-serif;
- font-size: 16px;
- line-height: 1.5;
- display: flex;
-*/ }
+  display: flex;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.8); }
 
 /*Style fyrir videos*/
 /*  style for the title   */
@@ -83,31 +74,6 @@ h2.headline {
   @media (min-width: 1000px) {
     .owerlay {
       background-size: 20% 20%; } }
-
-.flex-Line-Lefter {
-  animation-duration: 3s;
-  animation-name: slideLefter; }
-
-@keyframes slideLefter {
-  from {
-    margin-left: 100%;
-    width: 300%; }
-  to {
-    margin-left: 0;
-    width: 100%; } }
-
-/**************************/
-.flex-Line-Righter {
-  animation-duration: 3s;
-  animation-name: slideRighter; }
-
-@keyframes slideRighter {
-  from {
-    margin-right: 100%;
-    width: 300%; }
-  to {
-    margin-right: 0;
-    width: 100%; } }
 
 /*  Þetta sass mun sjá um frontpageid */
 /*  það er oll síðan  */
