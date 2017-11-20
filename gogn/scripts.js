@@ -8,7 +8,6 @@ const createElement = function (element, className = "") {
 }
 
 const appendChild = function (node, elementType, className = "") {
-  //main.appendChild(createElement("div", "gridd"));
   const div = document.createElement(elementType);
   div.setAttribute("class", className);
   return node.appendChild(div);
@@ -82,6 +81,7 @@ function runTheWorld(data) {
       leftyRighty.appendChild(aHref);
       const videoTitle = appendChild(leftyRighty, "p", "flex-Line-title");
       const videoDate = appendChild(leftyRighty, "p", "flex-Line-daysAgo");
+      console.log(video.duration);
       addTextToNode(durDiv, duration(video.duration));
       addTextToNode(videoTitle, video.title);
       addTextToNode(videoDate, videoCreated);
@@ -93,14 +93,8 @@ function runTheWorld(data) {
  * @param {int} seconds
  * @returns formatted seconds for video player
  */
-function duration(duration) {
-  if (duration < 61) {
-    console.log("hae", "00:0",duration);
-    //return ("00:", duration);
-  }
-}
+
 function currDate(created) {
-  duration(5);
   const currDate = new Date();
   const currmilli = currDate.getTime();
   const remaining = (currmilli - created);
