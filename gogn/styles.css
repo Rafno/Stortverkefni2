@@ -1,9 +1,18 @@
 @charset "UTF-8";
 html {
-  /* stylelint-disable-line */
   display: flex;
-  color: #fff;
-  background-color: rgba(0, 0, 0, 0.8); }
+  color: white;
+  /* stylelint-disable-line */
+  background-color: rgba(0, 0, 0, 0.8);
+  /*    box-sizing: border-box;
+ max-width: 1200px;
+ margin-right: 20px;
+ margin-left: 20px;
+//  font-family: 'Open Sans', sans-serif;
+ font-size: 16px;
+ line-height: 1.5;
+ display: flex;
+*/ }
 
 /*Style fyrir videos*/
 /*  style for the title   */
@@ -75,6 +84,31 @@ h2.headline {
     .owerlay {
       background-size: 20% 20%; } }
 
+.flex-Line-Lefter {
+  animation-duration: 3s;
+  animation-name: slideLefter; }
+
+@keyframes slideLefter {
+  from {
+    margin-left: 100%;
+    width: 300%; }
+  to {
+    margin-left: 0;
+    width: 100%; } }
+
+/**************************/
+.flex-Line-Righter {
+  animation-duration: 3s;
+  animation-name: slideRighter; }
+
+@keyframes slideRighter {
+  from {
+    margin-right: 100%;
+    width: 300%; }
+  to {
+    margin-right: 0;
+    width: 100%; } }
+
 /*  Þetta sass mun sjá um frontpageid */
 /*  það er oll síðan  */
 /* red */
@@ -91,14 +125,11 @@ p {
   overflow: hidden; }
 
 .durationDiv {
+  position: absolute;
   background-color: rgba(0, 0, 0, 0.5);
   padding: 0.25em 0.5em;
   border-radius: 0.2em;
-  margin-right: 1em;
-  margin-top: -3em;
-  z-index: 1000;
-  float: right;
-  position: relative; }
+  margin: 1em; }
 
 .flex-Line {
   display: flex; }
