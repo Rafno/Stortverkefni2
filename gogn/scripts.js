@@ -37,8 +37,6 @@ const getVideosForCategory = (categoryVideoIds, videos) => {
 }
 
 function runTheWorld(data) {
-  console.log('let the world begin!');
-  console.log(data);
   const main = document.querySelector("main");
   // const container = main.appendChild(createElement("div", "gridd"));
   const container = appendChild(main, "div", "gridd");
@@ -81,7 +79,6 @@ function runTheWorld(data) {
       leftyRighty.appendChild(aHref);
       const videoTitle = appendChild(leftyRighty, "p", "flex-Line-title");
       const videoDate = appendChild(leftyRighty, "p", "flex-Line-daysAgo");
-      console.log(video.duration);
       addTextToNode(durDiv, duration(video.duration));
       addTextToNode(videoTitle, video.title);
       addTextToNode(videoDate, videoCreated);
