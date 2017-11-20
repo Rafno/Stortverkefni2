@@ -9,7 +9,7 @@ const id = urlSplit;
 let teljari = 1;
 /************************** Title **************************** */
 if(urlSplit>3){
-  const headline = createElement("div","exit");
+  const headline = createElement("div","headline");
   const texter = appendChild(headline, "h2","headline");
   addTextToNode(texter,"Myndbandaleigan");
   main.appendChild(headline);
