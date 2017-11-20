@@ -6,13 +6,21 @@ function runTheWo(data) {
 const main = document.querySelector('main');
 console.log("Run the world!");
 const id = urlSplit;
-var teljari = 1;
+let teljari = 1;
 /************************** Title **************************** */
+if(urlSplit>3){
+  const headline = createElement("div","exit");
+  const texter = appendChild(headline, "h2","headline");
+  addTextToNode(texter,"Myndbandaleigan");
+  main.appendChild(headline);
+
+} else{
 const video = data.videos[id].video;
 const poster = data.videos[id].poster;
 const titill = data.videos[id].title;
+
 const title = createElement("div","Fyrirsogn");
-const txt = appendChild(title,"p","title");
+const txt = appendChild(title,"h3","title");
 addTextToNode(txt,titill);
 main.appendChild(title);
 
@@ -38,27 +46,6 @@ const boxer = createElement("div","container");
 appendChild(boxer,"div","boxer");
 main.appendChild(boxer);
 
-
-/*************** Effect fyrir play button in the img********************/
-/*owerlay.addEventListener('click',function(){
-  if(teljari ===1){
-    media.removeChild(posterDiv);
-    media.appendChild(videoDiv);
-    main.appendChild(boxer);
-    main.appendChild(back);
-  }
-  teljari +=1;
-  if(videoDiv.paused){
-    console.log("play");
-    videoDiv.play();
-
-  }
-  else{
-    console.log("pause");
-      videoDiv.pause();
-      console.log("ertu stopp");
-  }
-});
 /********************** Fast Back Button********************************/
 
 const BackDiv = createElement("img", "pic");
@@ -173,6 +160,7 @@ forwardDiv.addEventListener('click', function () {
   console.log("button has been pressed");
   videoDiv.currentTime = videoDiv.currentTime+3;
 });
+}
 }
 
 /*Appen, addTetxt og create hjálparföll*/
