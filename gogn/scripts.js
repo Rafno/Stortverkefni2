@@ -49,6 +49,7 @@ function runTheWorld(data) {
   addTextToNode(headerH2, "Myndbandaleigan");
   const categories = data.categories;
   const videos = data.videos;
+  duration(videos[2].duration);
 
   // Map to iterate over categories
   categories.map((category) => {
@@ -87,16 +88,20 @@ function runTheWorld(data) {
   });
 }
 /**
- * TODO, kl�ra.
+ * TODO, kl�ra.
  * @param {int} seconds
  * @returns formatted seconds for video player
  */
-function duration(seconds) {
-  if (seconds > 59) {
-    return math.floor(seconds / 60);
-  }
-  else return seconds;
-}
+ function duration(seconds) {
+   var x = Math.floor(seconds/60);
+   var y = seconds % 60;
+   if (x < 10) {
+     x = "0" + x;
+   } if (y < 10) {
+     y = "0" + y;
+   }
+   return (x + ":" + y);
+ }
 function currDate(created) {
   const currDate = new Date();
   const currmilli = currDate.getTime();
@@ -104,29 +109,41 @@ function currDate(created) {
   /*  Dagar */
   const totalSecs = remaining / 1000;
   const days = Math.floor(totalSecs / (60 * 60 * 24));
+  if (days > 365 && days < 729) {
+    return("fyrir " + Math.floor(days / 365) + " ári síðan");
+  }
+  if (days > 365) {
+    return("fyrir " + Math.floor(days / 365) + " árum síðan");
+  }
+  if (days > 30 && days < 60) {
+    return ("fyrir " + Math.floor(days / 30) + " mánuði síðan");
+  }
+  if (days > 30) {
+    return ("fyrir " + Math.floor(days / 30) + " mánudum síðan");
+  }
   if (days > 7) {
-    return ("fyrir " + Math.floor(days / 7) + " vikum sidan");
+    return ("fyrir " + Math.floor(days / 7) + " vikum síðan");
   }
   if (days > 1) {
-    return ("fyrir " + days + " dogum sidan ");
+    return ("fyrir " + days + " dögum síðan ");
   }
   if (days === 1) {
-    return ("fyrir " + days + " degi sidan ");
+    return ("fyrir " + days + " degi síðan ");
   }
   //klst
   const hours = Math.floor(totalSecs / 3600) % 24;
   if (hours < 25) {
-    return ("fyrir " + hours + " klukkustundum sidan ");
+    return ("fyrir " + hours + " klukkustundum síðan ");
   }
-  //m�n�tur
+  //m�n�tur
   const minutes = Math.floor(totalSecs / 60) % 60;
   if (minutes < 61) {
-    return ("fyrir " + minutes + " minutum sidan ");
+    return ("fyrir " + minutes + " minútum síðan ");
   }
   //Sek
   const seconds = totalSecs % 60;
   if (minutes < 61) {
-    return ("fyrir " + seconds + " sekundum sidan ");
+    return ("fyrir " + seconds + " sekúndum síðan ");
   }
 }
 // Load the json data and then run the world
