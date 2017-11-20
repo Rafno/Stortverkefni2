@@ -17,17 +17,12 @@ p {
 
 
 .durationDiv{
+  position: absolute;
   background-color: rgba(0, 0, 0, 0.5);
   padding: 0.25em 0.5em;
   border-radius: 0.2em;
-  margin-right: 1em;
-  margin-top: -3em;
-  z-index: 1000;
-  float: right;
-  position: relative;
-}
-
-
+  margin: 1em;
+ }
 
 
 .flex-Line {
