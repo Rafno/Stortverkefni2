@@ -8,13 +8,6 @@ function runTheWo(data) {
   const id = urlSplit;
   let teljari = 1;
   /************************** Title **************************** */
-  if (urlSplit > 3) {
-    const headline = createElement("div", "headline");
-    const texter = appendChild(headline, "h2", "headline");
-    addTextToNode(texter, "Myndbandaleigan");
-    main.appendChild(headline);
-
-  } else {
     const video = data.videos[id].video;
     const poster = data.videos[id].poster;
     const titill = data.videos[id].title;
@@ -23,6 +16,8 @@ function runTheWo(data) {
     const txt = appendChild(title, "h3", "title");
     addTextToNode(txt, titill);
     main.appendChild(title);
+
+
 
     /************************  Video   ****************************/
     const media = createElement("div", "media");
@@ -38,7 +33,6 @@ function runTheWo(data) {
     const posterDiv = createElement("img", "videoDiv");
     posterDiv.setAttribute("src", poster);
     media.appendChild(posterDiv);
-
 
 
     /************container fyrir controls takkana*****************/
@@ -160,7 +154,7 @@ function runTheWo(data) {
       console.log("button has been pressed");
       videoDiv.currentTime = videoDiv.currentTime + 3;
     });
-  }
+  
 }
 
 /*Appen, addTetxt og create hjálparföll*/
