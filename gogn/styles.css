@@ -42,7 +42,6 @@ img {
   margin-bottom: 15em;
   font-size: 1.5em; }
 
-/* Style fyror title */
 /* style for video and poster */
 .videoDiv {
   position: relative;
@@ -78,7 +77,11 @@ img {
   font-weight: bold;
   cursor: pointer; }
 
+/*  style fyror play button in the pic  */
 .owerlay {
+  width: 60%;
+  margin-right: 20%;
+  margin-left: 20%;
   position: absolute;
   top: 0;
   right: 0;
@@ -162,7 +165,6 @@ img {
   margin-bottom: 15em;
   font-size: 1.5em; }
 
-/* Style fyror title */
 /* style for video and poster */
 .videoDiv {
   position: relative;
@@ -198,7 +200,11 @@ img {
   font-weight: bold;
   cursor: pointer; }
 
+/*  style fyror play button in the pic  */
 .owerlay {
+  width: 60%;
+  margin-right: 20%;
+  margin-left: 20%;
   position: absolute;
   top: 0;
   right: 0;

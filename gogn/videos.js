@@ -12,9 +12,39 @@ function appendChild(node, elementType, className = '') {
 function addTextToNode(node, text) {
   node.appendChild(document.createTextNode(text));
 }
+/*  getting the id from the link  */
 const urlSplit = window.location.href.split('=')[1];
+let teljari = 1;
+/* creating all the elements that are requuired, later on append them to their place  */
+
+/*  Element for media */
+const media = createElement('div', 'media');
+
+/*  Get the location of main in HTML  */
 const main = document.querySelector('main');
 
+/* Hold the position of the video so that the play can be placed in the center  */
+const owerlay = createElement('div', 'owerlay');
+
+/*  Element for the container that holds til baka */
+const back = createElement('div', 'backContainer');
+
+/*  Element for the video */
+const videoDiv = createElement('video', 'videoDiv');
+
+/* Element for the poster before the video  */
+const posterDiv = createElement('img', 'videoDiv');
+
+/* Element for the play and pause button on the video media player */
+const playPauseDiv = createElement('img', 'pic');
+
+/*  Element for the mute and unmute button in the wideo media player  */
+const muterDiv = createElement('img', 'pic');
+
+/*  Element that holds all the wideo media buttons together */
+const boxer = createElement('div', 'container');
+
+/*  if id is to high this function starts and writes out error msg  */
 function errormsg(str) {
   const errorTitle = createElement('div', 'Fyrirsogn');
   const errorTxt = appendChild(errorTitle, 'h3', 'errorTitle');
@@ -26,14 +56,65 @@ function errormsg(str) {
   addTextToNode(errorB, str);
   main.appendChild(errorskilabod);
 }
-function runTheWo(data) {
+
+/*  Go back is eventListener for Til baka */
+function goBack() {
+  window.location.href = ('index.html');
+}
+
+/*  eventListener for reverse  */
+function currentminus() {
+  videoDiv.currentTime -= 3;
+}
+
+/*  eventListener for mute  */
+function mute() {
+  if (videoDiv.muted === false) {
+    videoDiv.muted = true;
+    muterDiv.setAttribute('src', '/img/unmute.svg');
+  } else {
+    videoDiv.muted = false;
+    muterDiv.setAttribute('src', '/img/mute.svg');
+  }
+}
+
+/*  eventListener fyrir fullScreen  */
+function full() {
+  const requestFullScreen = videoDiv.requestFullscreen ||
+  videoDiv.msRequestFullscreen || videoDiv.mozRequestFullScreen
+  || videoDiv.webkitRequestFullscreen;
+  requestFullScreen.call(videoDiv);
+}
+/*  eventListener fyrir forward */
+function forward() {
+  videoDiv.currentTime += 3;
+}
+/*  eventListener fyrir play and pause button  */
+function player() {
+  if (teljari === 1) {
+    media.removeChild(posterDiv);
+    media.appendChild(videoDiv);
+    main.appendChild(boxer);
+    main.appendChild(back);
+  }
+  teljari += 1;
+  if (videoDiv.paused) {
+    videoDiv.play();
+    document.querySelector('.owerlay').style.zIndex = '-1';
+    playPauseDiv.setAttribute('src', '/img/pause.svg');
+  } else {
+    videoDiv.pause();
+    document.querySelector('.owerlay').style.zIndex = '+1';
+    playPauseDiv.setAttribute('src', '/img/play.svg');
+  }
+}
+/*  if Fetch is okay this function starts and this is the main function*/
+function mainFunction(data) {
+  main.removeChild(main.childNodes[2]);
   const id = urlSplit;
-  let teljari = 1;
   /* ************************* Title **************************** */
   let video;
   let poster;
-  /* Create Element  that holds all the wideo media buttons together */
-  const boxer = createElement('div', 'container');
   appendChild(boxer, 'div', 'boxer');
 
   /* Fast back button created */
@@ -41,28 +122,25 @@ function runTheWo(data) {
   BackDiv.setAttribute('src', '/img/back.svg');
   appendChild(BackDiv, 'button', 'BackDiv');
 
-  /* Play and pause button created */
-  const playPauseDiv = createElement('img', 'pic');
+  /* appending playPause button and setting the setAttribute  */
   playPauseDiv.setAttribute('src', '/img/play.svg');
   appendChild(playPauseDiv, 'button', 'playPauseDiv');
 
-  /* Container that says til baka */
+  /* appending the button that says til Baka */
   const texti = ' Til baka ';
-  const back = createElement('div', 'backContainer');
   const texter = appendChild(back, 'div', 'back');
   addTextToNode(texter, texti);
 
-  /* mute and unmute buttons */
-  const muterDiv = createElement('img', 'pic');
+  /* appending mute and unmute buttons */
   muterDiv.setAttribute('src', '/img/mute.svg');
   appendChild(muterDiv, 'button', 'muterDiv');
 
-  /* Full screen button  */
+  /* creating Full screen button  */
   const fulDiv = createElement('img', 'pic');
   fulDiv.setAttribute('src', '/img/fullscreen.svg');
   appendChild(fulDiv, 'button', 'fulkDiv');
 
-  /* Forward Button  */
+  /* creating Forward Button  */
   const forwardDiv = createElement('img', 'pic');
   forwardDiv.setAttribute('src', '/img/next.svg');
   appendChild(forwardDiv, 'button', 'forwardDiv');
@@ -81,7 +159,7 @@ function runTheWo(data) {
     const textamsg = createElement('div', 'skilabod');
     const msg = appendChild(textamsg, 'h3', 'textamsg');
     addTextToNode(msg, skilabod);
-
+    /*  all the video buttons apended */
     main.appendChild(textamsg);
     main.appendChild(boxer);
     boxer.appendChild(BackDiv);
@@ -91,114 +169,43 @@ function runTheWo(data) {
     boxer.appendChild(fulDiv);
     boxer.appendChild(forwardDiv);
 
-    function goBack() {
-      window.location.href = ('index.html');
-    }
+    /*  eventListener for the button Til baka*/
     back.addEventListener('click', goBack);
 
   /*  Otherwise the id was not to high and there is a video in the json file with
       this id */
   } else {
-    video = data.videos[id].video;
-    poster = data.videos[id].poster;
+    ({ video } = data.videos[id]);
+    ({ poster } = data.videos[id]);
     const titill = data.videos[id].title;
-
+    /*  creating the title element and the name is from the json file */
     const title = createElement('div', 'Fyrirsogn');
-    const txt = appendChild(title, 'h3', 'title');
+    const txt = appendChild(title, 'b', 'title');
     addTextToNode(txt, titill);
+
     main.appendChild(title);
-
-
-    /* ***********************  Video   *************************** */
-    const media = createElement('div', 'media');
     main.appendChild(media);
-
-    const owerlay = createElement('div', 'owerlay');
     media.appendChild(owerlay);
-
-    const videoDiv = createElement('video', 'videoDiv');
     videoDiv.setAttribute('src', video);
-
-
-    const posterDiv = createElement('img', 'videoDiv');
     posterDiv.setAttribute('src', poster);
     media.appendChild(posterDiv);
-    /* ***********append container fyrir controls takkana**************** */
     main.appendChild(boxer);
-
-    /* ********************* append Fast Back Button******************************* */
     boxer.appendChild(BackDiv);
-    /* *************** Effect for Back Button ********************** */
-    function current() {
-      videoDiv.currentTime -= 3;
-    }
-    BackDiv.addEventListener('click', current);
-    /* *********************** Play Button *************************** */
+    BackDiv.addEventListener('click', currentminus);
     boxer.appendChild(playPauseDiv);
-    function player() {
-      if (teljari === 1) {
-        media.removeChild(posterDiv);
-        media.appendChild(videoDiv);
-        main.appendChild(boxer);
-        main.appendChild(back);
-      }
-      teljari += 1;
-      if (videoDiv.paused) {
-        videoDiv.play();
-        document.querySelector('.owerlay').style.zIndex = '-1';
-        playPauseDiv.setAttribute('src', '/img/pause.svg');
-      } else {
-        videoDiv.pause();
-        document.querySelector('.owerlay').style.zIndex = '+1';
-        playPauseDiv.setAttribute('src', '/img/play.svg');
-      }
-    }
-    /*  calling to addEventListener for 2 kind of play button.
-        one is in the boxer and the other on the video  */
-
-    playPauseDiv.addEventListener('click', player);
-    owerlay.addEventListener('click', player);
-
-    /* ***********append Kassin sem sér um að fara aftur um síðu****** */
     main.appendChild(back);
-    /* ******* Effect fyir kassan sem fer aftur um eina síðu ***** */
-    function goBack() {
-      window.location.href = ('index.html');
-    }
-    back.addEventListener('click', goBack);
-    /* ***********************append Unmute Button******************************** */
     boxer.appendChild(muterDiv);
-
-    /* *************** Effect for unMute Button ********************** */
-    muterDiv.addEventListener('click', mute);
-    function mute(){
-      if (videoDiv.muted === false) {
-        videoDiv.muted = true;
-        muterDiv.setAttribute('src', '/img/unmute.svg');
-      } else {
-        videoDiv.muted = false;
-        muterDiv.setAttribute('src', '/img/mute.svg');
-      }
-    }
-
-    /*  ********************** append Full Button*************************** */
     boxer.appendChild(fulDiv);
-    /* *********************** Effect Full screen ********************** */
-    function full(){
-      const requestFullScreen = videoDiv.requestFullscreen ||
-      videoDiv.msRequestFullscreen || videoDiv.mozRequestFullScreen
-      || videoDiv.webkitRequestFullscreen;
-      requestFullScreen.call(videoDiv);
-    }
-    fulDiv.addEventListener('click', full);
-    /*  ********************* append Fast Forward Button ******************************* */
     boxer.appendChild(forwardDiv);
 
-    /* *************** Effect for Forward Button ********************** */
+    /*  if the media buttons are pressed than these lines activates the
+        eventListeners above  */
+    playPauseDiv.addEventListener('click', player);
+    owerlay.addEventListener('click', player);
+    back.addEventListener('click', goBack);
+    muterDiv.addEventListener('click', mute);
+    fulDiv.addEventListener('click', full);
     forwardDiv.addEventListener('click', forward);
-      function forward(){
-        videoDiv.currentTime += 3;
-    }
   }
 }
 
