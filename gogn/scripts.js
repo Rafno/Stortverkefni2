@@ -24,7 +24,7 @@ function appendChild(node, elementType, className = '') {
   div.setAttribute('class', className);
   return node.appendChild(div);
 }
-/* Bý til villu node */
+/* Byr til villu node sem eg svo eydi tegar forritid byrjar */
 const errorskilabod = createElement('div', 'errorSkilabod');
 const errorB = appendChild(errorskilabod, 'span', 'errorskilabod');
 main.appendChild(errorskilabod);
@@ -63,7 +63,6 @@ const getVideosForCategory = (categoryVideoIds, videos) => {
  */
 function runTheWorld(data) {
   main.removeChild(main.childNodes[1]);
-  // const container = main.appendChild(createElement('div', 'gridd'));
   const container = appendChild(main, 'div', 'gridd');
   /* Creating header */
   const containerHeader = appendChild(container, 'header');
@@ -77,7 +76,7 @@ function runTheWorld(data) {
 * Tekur a moti Category object.
  * @param {Object} Category
  * lika, eg disablea eslint i mappinu her fyrir nedan af tvi ad:
-  *hvorug map eiga ad skila einhverju
+  * hvorug map eiga ad skila einhverju, eg by til allan listann i mappinu.
   */
   /* eslint-disable */
   categories.map((category) => {
