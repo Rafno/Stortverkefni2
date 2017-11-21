@@ -1,5 +1,8 @@
 # Stortverkefni2
 Hópverkefni í vefforritun sem Rao13, hgg26 og spe3 gerðum saman.
+* Rafnar(Rao13) 2.ár í tölvunarfræði
+* Helgi(hgg26) 2.ár í tölvunarfræði
+* Sigursteinn(spe3) 1.ár í tölvunarfræði
 
 Má sjá að við notum sama fetch fall í bæði script.js og videos.js.
 
