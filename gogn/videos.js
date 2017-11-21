@@ -101,11 +101,11 @@ function player() {
   if (videoDiv.paused) {
     videoDiv.play();
     document.querySelector('.owerlay').style.zIndex = '-1';
-    playPauseDiv.setAttribute('src', '/img/pause.svg');
+    playPauseDiv.setAttribute('src', './img/pause.svg');
   } else {
     videoDiv.pause();
     document.querySelector('.owerlay').style.zIndex = '+1';
-    playPauseDiv.setAttribute('src', '/img/play.svg');
+    playPauseDiv.setAttribute('src', './img/play.svg');
   }
 }
 /*  if Fetch is okay this function starts and this is the main function */
@@ -119,11 +119,11 @@ function mainFunction(data) {
 
   /* Fast back button created */
   const BackDiv = createElement('img', 'pic');
-  BackDiv.setAttribute('src', '/img/back.svg');
+  BackDiv.setAttribute('src', './img/back.svg');
   appendChild(BackDiv, 'button', 'BackDiv');
 
   /* appending playPause button and setting the setAttribute  */
-  playPauseDiv.setAttribute('src', '/img/play.svg');
+  playPauseDiv.setAttribute('src', './img/play.svg');
   appendChild(playPauseDiv, 'button', 'playPauseDiv');
 
   /* appending the button that says til Baka */
@@ -132,17 +132,17 @@ function mainFunction(data) {
   addTextToNode(texter, texti);
 
   /* appending mute and unmute buttons */
-  muterDiv.setAttribute('src', '/img/mute.svg');
+  muterDiv.setAttribute('src', './img/mute.svg');
   appendChild(muterDiv, 'button', 'muterDiv');
 
   /* creating Full screen button  */
   const fulDiv = createElement('img', 'pic');
-  fulDiv.setAttribute('src', '/img/fullscreen.svg');
+  fulDiv.setAttribute('src', './img/fullscreen.svg');
   appendChild(fulDiv, 'button', 'fulkDiv');
 
   /* creating Forward Button  */
   const forwardDiv = createElement('img', 'pic');
-  forwardDiv.setAttribute('src', '/img/next.svg');
+  forwardDiv.setAttribute('src', './img/next.svg');
   appendChild(forwardDiv, 'button', 'forwardDiv');
 
   /* If the id is higher than 3 that means that there is now video awailable in the
