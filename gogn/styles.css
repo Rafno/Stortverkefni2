@@ -79,17 +79,17 @@ img {
 
 /*  style fyror play button in the pic  */
 .owerlay {
-  width: 60%;
-  margin-right: 20%;
-  margin-left: 20%;
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
   z-index: 1;
+  width: 60%;
+  margin-right: 20%;
+  margin-left: 20%;
   background-color: rgba(0, 0, 0, 0.2);
-  background-image: url("/img/play.svg");
+  background-image: url("./img/play.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 20% 20%; }
@@ -202,17 +202,17 @@ img {
 
 /*  style fyror play button in the pic  */
 .owerlay {
-  width: 60%;
-  margin-right: 20%;
-  margin-left: 20%;
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
   z-index: 1;
+  width: 60%;
+  margin-right: 20%;
+  margin-left: 20%;
   background-color: rgba(0, 0, 0, 0.2);
-  background-image: url("/img/play.svg");
+  background-image: url("./img/play.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 20% 20%; }
