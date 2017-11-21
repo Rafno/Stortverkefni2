@@ -94,9 +94,11 @@ function runTheWo(data) {
     boxer.appendChild(fulDiv);
     boxer.appendChild(forwardDiv);
 
-    back.addEventListener('click', function () {
+    back.addEventListener('click', goBack);
+
+    function goBack() {
       window.location.href = ('index.html');
-    });
+    }
   /*  Otherwise the id was not to high and there is a video in the json file with
       this id */
   } else {
@@ -130,10 +132,10 @@ function runTheWo(data) {
     /* ********************* append Fast Back Button******************************* */
     boxer.appendChild(BackDiv);
     /* *************** Effect for Back Button ********************** */
-    BackDiv.addEventListener('click', function () {
+    BackDiv.addEventListener('click', current);
+    function current(){
       videoDiv.currentTime -= 3;
-    });
-
+    }
     /* *********************** Play Button *************************** */
     boxer.appendChild(playPauseDiv);
     function player() {
@@ -163,14 +165,16 @@ function runTheWo(data) {
     /* ***********append Kassin sem sér um að fara aftur um síðu****** */
     main.appendChild(back);
     /* ******* Efecct fyir kassan sem fer aftur um eina síðu ***** */
-    back.addEventListener('click', function () {
+    back.addEventListener('click', goBack);
+    function goBack() {
       window.location.href = ('index.html');
-    });
+    }
     /* ***********************append Unmute Button******************************** */
     boxer.appendChild(muterDiv);
 
     /* *************** Effect for unMute Button ********************** */
-    muterDiv.addEventListener('click', function () {
+    muterDiv.addEventListener('click', mute);
+    function mute(){
       if (videoDiv.muted === false) {
         videoDiv.muted = true;
         muterDiv.setAttribute('src', '/img/unmute.svg');
@@ -178,23 +182,26 @@ function runTheWo(data) {
         videoDiv.muted = false;
         muterDiv.setAttribute('src', '/img/mute.svg');
       }
-    });
+    }
+
     /*  ********************** append Full Button*************************** */
     boxer.appendChild(fulDiv);
     /* *********************** Effect Full screen ********************** */
-    fulDiv.addEventListener('click', function () {
+    fulDiv.addEventListener('click', full);
+    function full(){
       const requestFullScreen = videoDiv.requestFullscreen ||
-        videoDiv.msRequestFullscreen || videoDiv.mozRequestFullScreen
-        || videoDiv.webkitRequestFullscreen;
+      videoDiv.msRequestFullscreen || videoDiv.mozRequestFullScreen
+      || videoDiv.webkitRequestFullscreen;
       requestFullScreen.call(videoDiv);
-    });
+    }
     /*  ********************* append Fast Forward Button ******************************* */
     boxer.appendChild(forwardDiv);
 
     /* *************** Effect for Forward Button ********************** */
-    forwardDiv.addEventListener('click', function () {
-      videoDiv.currentTime += 3;
-    });
+    forwardDiv.addEventListener('click', forward);
+      function forward(){
+        videoDiv.currentTime += 3;
+    }
   }
 }
 
