@@ -71,10 +71,10 @@ function currentminus() {
 function mute() {
   if (videoDiv.muted === false) {
     videoDiv.muted = true;
-    muterDiv.setAttribute('src', '/img/unmute.svg');
+    muterDiv.setAttribute('src', './img/unmute.svg');
   } else {
     videoDiv.muted = false;
-    muterDiv.setAttribute('src', '/img/mute.svg');
+    muterDiv.setAttribute('src', './img/mute.svg');
   }
 }
 
