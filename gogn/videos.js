@@ -4,7 +4,6 @@ const urlSplit = window.location.href.split('=')[1];
 console.log(urlSplit);
 function runTheWo(data) {
 const main = document.querySelector('main');
-console.log("Run the world!");
 const id = urlSplit;
 let teljari = 1;
 /************************** Title **************************** */
