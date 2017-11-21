@@ -45,7 +45,6 @@ html {
 .media {
   position: relative; }
 
-/*  Style for the play button inside the pictures */
 /*  Style for the container that keeps the svg icons  */
 .container {
   display: flex;
@@ -75,6 +74,14 @@ html {
   @media (min-width: 1000px) {
     .owerlay {
       background-size: 20% 20%; } }
+
+/*  Style for the errorTxtmsg */
+.errorSkilabod {
+  position: absolute;
+  z-index: -1;
+  top: 15.3em;
+  left: 24.62em;
+  font-size: 1.5em; }
 
 /*  Þetta sass mun sjá um frontpageid */
 h2 {
@@ -175,7 +182,6 @@ img {
 .media {
   position: relative; }
 
-/*  Style for the play button inside the pictures */
 /*  Style for the container that keeps the svg icons  */
 .container {
   display: flex;

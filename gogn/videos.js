@@ -13,8 +13,23 @@ function addTextToNode(node, text) {
   node.appendChild(document.createTextNode(text));
 }
 const urlSplit = window.location.href.split('=')[1];
+const main = document.querySelector('main');
+
+function errormsg(str){
+  const errorTitle = createElement('div', 'Fyrirsogn');
+  const errorTxt = appendChild(errorTitle, 'h3', 'errorTitle');
+  addTextToNode(errorTxt, "Myndbandaleigan");
+  main.appendChild(errorTitle);
+
+  const errorskilabod = createElement("div","errorSkilabod");
+  const errorB = appendChild(errorskilabod,"span","errorskilabod");
+  addTextToNode(errorB, str);
+  main.appendChild(errorskilabod);
+}
 function runTheWo(data) {
-  const main = document.querySelector('main');
+  /*  Hide laoding  */
+
+
   const id = urlSplit;
   let teljari = 1;
   /* ************************* Title **************************** */
@@ -185,8 +200,9 @@ function runTheWo(data) {
 
 async function init() {
   const response = await fetch('videos.json');
+
   await response.json()
     .then(jsonData => runTheWo(jsonData))
-    .catch(error => error);
+    .catch(error => errormsg("Gat ekki hlaðið inn gögn"));
 }
 init();

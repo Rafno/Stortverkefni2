@@ -5,10 +5,22 @@
  * @param {String} className
 * @returns node
  */
+ main = document.querySelector('main');
 function createElement(element, className = '') {
   const div = document.createElement(element);
   div.setAttribute('class', className);
   return div;
+}
+function errormsg(str){
+  const errorTitle = createElement('div', 'Fyrirsogn');
+  const errorTxt = appendChild(errorTitle, 'h3', 'errorTitle');
+  addTextToNode(errorTxt, "Myndbandaleigan");
+  main.appendChild(errorTitle);
+
+  const errorskilabod = createElement("div","errorSkilabod");
+  const errorB = appendChild(errorskilabod,"span","errorskilabod");
+  addTextToNode(errorB, str);
+  main.appendChild(errorskilabod);
 }
 /**
  *
@@ -56,7 +68,6 @@ const getVideosForCategory = (categoryVideoIds, videos) => {
  * @param {JSON} data
  */
 function runTheWorld(data) {
-  const main = document.querySelector('main');
   // const container = main.appendChild(createElement('div', 'gridd'));
   const container = appendChild(main, 'div', 'gridd');
   /* Creating header */
@@ -185,8 +196,9 @@ function daysSinceCreated(created) {
 // Load the json data and then run the world
 async function init() {
   const response = await fetch('videos.json');
+  errormsg("Hleð inn gögnum ...");
   await response.json()
     .then(jsonData => runTheWorld(jsonData))
-    .catch(error => error);
+    .catch(error => errormsg('Gat ekki hlaðið inn gögnum'));
 }
 init();
