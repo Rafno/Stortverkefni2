@@ -46,11 +46,6 @@ const boxer = createElement('div', 'container');
 
 /*  if id is to high this function starts and writes out error msg  */
 function errormsg(str) {
-  const errorTitle = createElement('div', 'Fyrirsogn');
-  const errorTxt = appendChild(errorTitle, 'h3', 'errorTitle');
-  addTextToNode(errorTxt, 'Myndbandaleigan');
-  main.appendChild(errorTitle);
-
   const errorskilabod = createElement('div', 'errorSkilabod');
   const errorB = appendChild(errorskilabod, 'span', 'errorskilabod');
   addTextToNode(errorB, str);
@@ -110,7 +105,7 @@ function player() {
 }
 /*  if Fetch is okay this function starts and this is the main function */
 function mainFunction(data) {
-  main.removeChild(main.childNodes[2]);
+  main.removeChild(main.childNodes[1]);
   const id = urlSplit;
   /* ************************* Title **************************** */
   let video;
