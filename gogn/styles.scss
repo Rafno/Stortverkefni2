@@ -1,13 +1,34 @@
 
-// mæli með að hafa „almenna“ stíla hér
+/*  í þessu scss vildum við hafa "almmenna" tagstýringu á skjölunum okkar
+*   smsagt tögin h2, img og p en þar sem lint samþykkir ekki almenna stýringu
+*   þá gerðum við Lint-ignore á þau tög.
+*/
 
 body { // stylelint-disable-line
+}
+
+h2 { // stylelint-disable-line
+  font-size: 2.5em;
+}
+
+p {  // stylelint-disable-line
+  width: 12em;
+  overflow: hidden;
+  font-size: 1.5em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 html { /* stylelint-disable-line */
   display: flex;
   color: #fff;
   background-color: rgba(0, 0, 0, 0.8);
+}
+
+img {  //stylelint-disable-line
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 @import "scss/videos";
