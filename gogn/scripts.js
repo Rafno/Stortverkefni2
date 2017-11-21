@@ -1,13 +1,11 @@
 // JavaScript source code
-'use strict';
-
 /**
  * Tekur inn element og classname sem strin
  * @param {String} element
  * @param {String} className
 * @returns node
  */
-const createElement = function (element, className = '') {
+function createElement(element, className = '') {
   const div = document.createElement(element);
   div.setAttribute('class', className);
   return div;
@@ -19,7 +17,7 @@ const createElement = function (element, className = '') {
  * @param {String} className
 * @returns {Node} appended with newly created div.
  */
-const appendChild = function (node, elementType, className = '') {
+function appendChild(node, elementType, className = '') {
   const div = document.createElement(elementType);
   div.setAttribute('class', className);
   return node.appendChild(div);
@@ -30,7 +28,7 @@ const appendChild = function (node, elementType, className = '') {
  * @param {String} text
 * @returns node appended with text.
  */
-const addTextToNode = function (node, text) {
+function addTextToNode(node, text) {
   node.appendChild(document.createTextNode(text));
 }
 
@@ -40,9 +38,10 @@ const addTextToNode = function (node, text) {
  * @returns {array of video objects}
  */
 const getVideosForCategory = (categoryVideoIds, videos) => {
-  //https://docs.microsoft.com/en-us/scripting/javascript/reference/filter-method-array-javascript
+// https://docs.microsoft.com/en-us/scripting/javascript/reference/filter-method-array-javascript
+
   const filteredVideoArray = videos.filter((entryInArray) => {
-    for (let i = 0; i < categoryVideoIds.length; i++) {
+    for (let i = 0; i < categoryVideoIds.length; i += 1) {
       if (categoryVideoIds[i] === entryInArray.id) {
         return true;
       }
@@ -50,8 +49,7 @@ const getVideosForCategory = (categoryVideoIds, videos) => {
     return false;
   });
   return filteredVideoArray;
-
-}
+};
 /**
  * Main fall sem keyrir allt skjalid
 * Getur ekki keyrt nema ef data er parsed fra init.
@@ -65,43 +63,45 @@ function runTheWorld(data) {
   const containerHeader = appendChild(container, 'header');
   const headerH2 = appendChild(containerHeader, 'h2', 'title');
   addTextToNode(headerH2, 'Myndbandaleigan');
-  const categories = data.categories;
-  const videos = data.videos;
+  const { categories } = data;
+  const { videos } = data;
 
   /**
  * map til ad iterate i gegnum category.
 * Tekur a moti Category object.
  * @param {Object} Category
- */
+ * lika, eg disablea eslint i mappinu her fyrir nedan af tvi ad:
+  *hvorug map eiga ad skila einhverju
+  */
+  /* eslint-disable */
   categories.map((category) => {
     const filteredVideos = getVideosForCategory(category.videos, videos);
 
-    //create header for category
+    // create header for category
     const h2 = appendChild(container, 'h2', 'category');
     addTextToNode(h2, category.title);
     const categoryContainer = appendChild(container, 'div', 'flex-Line');
-    const seperator = appendChild(container, 'div', 'seperator');
 
     // Map to iterate over category videos
     filteredVideos.map((video, index) => {
       const boxContainer = createElement('div', 'flex-Line-Box');
 
-      //Kallar a currDate fallid til ad bua til timann
-      const videoCreated = currDate(video.created);
+      // Kallar a Date fallid til ad bua til timann
+      const videoCreated = daysSinceCreated(video.created);
 
       // Create video div
       const videoContainer = appendChild(categoryContainer, 'div', 'flex-Line-item');
       videoContainer.appendChild(boxContainer);
 
-     //create 'a' element and add image to it.
+      // create 'a' element and add image to it.
       const aHref = createElement('a');
-      aHref.setAttribute('href', 'videos.html?id=' + index);
+      aHref.setAttribute('href', `videos.html?id=${index}`);
       const anImg = createElement('img');
       anImg.setAttribute('src', video.poster);
       aHref.appendChild(anImg);
       boxContainer.appendChild(aHref);
 
-      //AppendNation
+      // AppendNation
       const durDiv = appendChild(boxContainer, 'div', 'durationDiv');
       const videoTitle = appendChild(boxContainer, 'p', 'flex-Line-title');
       const videoDate = appendChild(boxContainer, 'p', 'flex-Line-daysAgo');
@@ -110,6 +110,7 @@ function runTheWorld(data) {
       addTextToNode(videoDate, videoCreated);
     });
   });
+  /* eslint-enable */
 }
 /**
  * .
@@ -117,15 +118,15 @@ function runTheWorld(data) {
  * @returns formatted seconds for video player
  */
 function duration(seconds) {
-  var x = Math.floor(seconds/60);
-  var y = seconds % 60;
+  let x = Math.floor(seconds / 60);
+  let y = seconds % 60;
   if (x < 10) {
-    x = ('0' + x);
+    x = (`0${x}`);
   }
   if (y < 10) {
-    y = ('0' + y);
+    y = (`0${y}`);
   }
-  return (x + ':' + y);
+  return (`${x}:${y}`);
 }
 /**
  * Fall sem tekur inn sekundur fra videos.json og skilar
@@ -133,60 +134,59 @@ function duration(seconds) {
  * @param {int} created
  * @returns {String}
  */
-function currDate(created) {
+function daysSinceCreated(created) {
   const currDate = new Date();
   const currmilli = currDate.getTime();
   const remaining = (currmilli - created);
   /*  Dagar */
   const totalSecs = remaining / 1000;
   const days = Math.floor(totalSecs / (60 * 60 * 24));
-  console.log(days);
   if (days > 365 && days < 730) {
-    return ('fyrir ' + Math.floor(days / 365) + ' ári síðan')
+    return (`fyrir ${Math.floor(days / 365)}  ári síðan`);
   }
   if (days > 365) {
-    return ('fyrir ' + Math.floor(days / 365) + ' árum síðan')
+    return (`fyrir ${Math.floor(days / 365)} árum síðan`);
   }
   if (days > 30 && days < 60) {
-    return ('fyrir ' + Math.floor(days / 30) + ' mánuði síðan')
+    return (`fyrir ${Math.floor(days / 30)} mánuði síðan`);
   }
   if (days > 30) {
-    return ('fyrir ' + Math.floor(days / 30) + ' mánuðum síðan')
+    return (`fyrir ${Math.floor(days / 30)} mánuðum síðan`);
   }
   if (days > 7 && days < 14) {
-    return ('fyrir ' + Math.floor(days / 7) + 'viku síðan')
+    return (`fyrir ${Math.floor(days / 7)} viku síðan`);
   }
   if (days > 7) {
-    return ('fyrir ' + Math.floor(days / 7) + ' vikum síðan');
+    return (`fyrir ${Math.floor(days / 7)}  vikum síðan`);
   }
   if (days > 1) {
-    return ('fyrir ' + days + ' dögum síðan ');
+    return (`fyrir ${days} dögum síðan`);
   }
   if (days === 1) {
-    return ('fyrir ' + days + ' degi síðan ');
+    return (`fyrir ${days} degi síðan`);
   }
-  //klst
+  // klst
   const hours = Math.floor(totalSecs / 3600) % 24;
   if (hours < 25) {
-    return ('fyrir ' + hours + ' klukkustundum síðan ');
+    return (`fyrir ${hours} klukkustundum síðan`);
   }
-  //minutur
+  // minutur
   const minutes = Math.floor(totalSecs / 60) % 60;
   if (minutes < 61) {
-    return ('fyrir ' + minutes + ' mínutum síðan ');
+    return (`fyrir ${minutes} mínutum síðan`);
   }
-  //Sek
+  // Sek
   const seconds = totalSecs % 60;
   if (minutes < 61) {
-    return ('fyrir ' + seconds + ' sekúndum síðan ');
+    return (`fyrir ${seconds} sekúndum síðan`);
   }
+  return {};
 }
 // Load the json data and then run the world
 async function init() {
-  let response = await fetch('videos.json');
+  const response = await fetch('videos.json');
   await response.json()
     .then(jsonData => runTheWorld(jsonData))
-    .catch(error => { console.log(error); return [] });
+    .catch(error => error);
 }
-
 init();
