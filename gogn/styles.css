@@ -17,10 +17,11 @@ html {
     .Fyrirsogn {
       font-size: 1.5em; } }
 
-h2.headline {
+.skilabod {
   display: flex;
   justify-content: center;
-  width: 100%; }
+  font-size: 1.5em;
+  padding-bottom: 10em; }
 
 /*  Style fyror title*/
 /*  style for video and poster  */
@@ -148,10 +149,11 @@ img {
     .Fyrirsogn {
       font-size: 1.5em; } }
 
-h2.headline {
+.skilabod {
   display: flex;
   justify-content: center;
-  width: 100%; }
+  font-size: 1.5em;
+  padding-bottom: 10em; }
 
 /*  Style fyror title*/
 /*  style for video and poster  */
