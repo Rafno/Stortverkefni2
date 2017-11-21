@@ -91,11 +91,11 @@ function runTheWo(data) {
     boxer.appendChild(fulDiv);
     boxer.appendChild(forwardDiv);
 
-    back.addEventListener('click', goBack);
-
     function goBack() {
       window.location.href = ('index.html');
     }
+    back.addEventListener('click', goBack);
+
   /*  Otherwise the id was not to high and there is a video in the json file with
       this id */
   } else {
@@ -129,10 +129,10 @@ function runTheWo(data) {
     /* ********************* append Fast Back Button******************************* */
     boxer.appendChild(BackDiv);
     /* *************** Effect for Back Button ********************** */
-    BackDiv.addEventListener('click', current);
-    function current(){
+    function current() {
       videoDiv.currentTime -= 3;
     }
+    BackDiv.addEventListener('click', current);
     /* *********************** Play Button *************************** */
     boxer.appendChild(playPauseDiv);
     function player() {
@@ -161,11 +161,11 @@ function runTheWo(data) {
 
     /* ***********append Kassin sem sér um að fara aftur um síðu****** */
     main.appendChild(back);
-    /* ******* Efecct fyir kassan sem fer aftur um eina síðu ***** */
-    back.addEventListener('click', goBack);
+    /* ******* Effect fyir kassan sem fer aftur um eina síðu ***** */
     function goBack() {
       window.location.href = ('index.html');
     }
+    back.addEventListener('click', goBack);
     /* ***********************append Unmute Button******************************** */
     boxer.appendChild(muterDiv);
 
@@ -184,13 +184,13 @@ function runTheWo(data) {
     /*  ********************** append Full Button*************************** */
     boxer.appendChild(fulDiv);
     /* *********************** Effect Full screen ********************** */
-    fulDiv.addEventListener('click', full);
     function full(){
       const requestFullScreen = videoDiv.requestFullscreen ||
       videoDiv.msRequestFullscreen || videoDiv.mozRequestFullScreen
       || videoDiv.webkitRequestFullscreen;
       requestFullScreen.call(videoDiv);
     }
+    fulDiv.addEventListener('click', full);
     /*  ********************* append Fast Forward Button ******************************* */
     boxer.appendChild(forwardDiv);
 
