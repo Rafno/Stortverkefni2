@@ -1,9 +1,28 @@
 @charset "UTF-8";
+/*  í þessu scss vildum við hafa "almmenna" tagstýringu á skjölunum okkar
+*   smsagt tögin h2, img og p en þar sem lint samþykkir ekki almenna stýringu
+*   þá gerðum við Lint-ignore á þau tög.
+*/
+h2 {
+  font-size: 2.5em; }
+
+p {
+  width: 12em;
+  overflow: hidden;
+  font-size: 1.5em;
+  text-overflow: ellipsis;
+  white-space: nowrap; }
+
 html {
   /* stylelint-disable-line */
   display: flex;
   color: #fff;
   background-color: rgba(0, 0, 0, 0.8); }
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; }
 
 /* Style fyrir videos */
 /*  style for the title   */
@@ -78,24 +97,12 @@ html {
 /*  Style for the errorTxtmsg */
 .errorSkilabod {
   position: absolute;
-  z-index: -1;
   top: 15.3em;
   left: 24.62em;
+  z-index: -1;
   font-size: 1.5em; }
 
 /*  Þetta sass mun sjá um frontpageid */
-h2 {
-  /* stylelint disable Line */
-  font-size: 2.5em; }
-
-p {
-  /* stylelint disable Line */
-  width: 12em;
-  overflow: hidden;
-  font-size: 1.5em;
-  text-overflow: ellipsis;
-  white-space: nowrap; }
-
 .durationDiv {
   position: relative;
   z-index: 1000;
@@ -136,11 +143,6 @@ p {
   margin-left: 8%;
   color: #eee;
   border-bottom: solid 1px; }
-
-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; }
 
 /* Style fyrir videos */
 /*  style for the title   */

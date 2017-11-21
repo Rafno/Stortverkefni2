@@ -1,26 +1,16 @@
 // JavaScript source code
+// by til global main breytu.
+const main = document.querySelector('main');
 /**
  * Tekur inn element og classname sem strin
  * @param {String} element
  * @param {String} className
 * @returns node
  */
- main = document.querySelector('main');
 function createElement(element, className = '') {
   const div = document.createElement(element);
   div.setAttribute('class', className);
   return div;
-}
-function errormsg(str){
-  const errorTitle = createElement('div', 'Fyrirsogn');
-  const errorTxt = appendChild(errorTitle, 'h3', 'errorTitle');
-  addTextToNode(errorTxt, "Myndbandaleigan");
-  main.appendChild(errorTitle);
-
-  const errorskilabod = createElement("div","errorSkilabod");
-  const errorB = appendChild(errorskilabod,"span","errorskilabod");
-  addTextToNode(errorB, str);
-  main.appendChild(errorskilabod);
 }
 /**
  *
@@ -34,6 +24,10 @@ function appendChild(node, elementType, className = '') {
   div.setAttribute('class', className);
   return node.appendChild(div);
 }
+/* Bý til villu node */
+const errorskilabod = createElement('div', 'errorSkilabod');
+const errorB = appendChild(errorskilabod, 'span', 'errorskilabod');
+main.appendChild(errorskilabod);
 /**
  *
  * @param {Node} node
@@ -68,6 +62,7 @@ const getVideosForCategory = (categoryVideoIds, videos) => {
  * @param {JSON} data
  */
 function runTheWorld(data) {
+  main.removeChild(main.childNodes[1]);
   // const container = main.appendChild(createElement('div', 'gridd'));
   const container = appendChild(main, 'div', 'gridd');
   /* Creating header */
@@ -196,9 +191,9 @@ function daysSinceCreated(created) {
 // Load the json data and then run the world
 async function init() {
   const response = await fetch('videos.json');
-  errormsg("Hleð inn gögnum ...");
+  addTextToNode(errorB, 'Hleð inn gögnum ...');
   await response.json()
     .then(jsonData => runTheWorld(jsonData))
-    .catch(error => errormsg('Gat ekki hlaðið inn gögnum'));
+    .catch(errorB.innerHTML = 'Gat ekki hlaðið inn gögnum');
 }
 init();

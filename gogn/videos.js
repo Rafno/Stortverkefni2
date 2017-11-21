@@ -15,21 +15,18 @@ function addTextToNode(node, text) {
 const urlSplit = window.location.href.split('=')[1];
 const main = document.querySelector('main');
 
-function errormsg(str){
+function errormsg(str) {
   const errorTitle = createElement('div', 'Fyrirsogn');
   const errorTxt = appendChild(errorTitle, 'h3', 'errorTitle');
-  addTextToNode(errorTxt, "Myndbandaleigan");
+  addTextToNode(errorTxt, 'Myndbandaleigan');
   main.appendChild(errorTitle);
 
-  const errorskilabod = createElement("div","errorSkilabod");
-  const errorB = appendChild(errorskilabod,"span","errorskilabod");
+  const errorskilabod = createElement('div', 'errorSkilabod');
+  const errorB = appendChild(errorskilabod, 'span', 'errorskilabod');
   addTextToNode(errorB, str);
   main.appendChild(errorskilabod);
 }
 function runTheWo(data) {
-  /*  Hide laoding  */
-
-
   const id = urlSplit;
   let teljari = 1;
   /* ************************* Title **************************** */
@@ -203,6 +200,6 @@ async function init() {
 
   await response.json()
     .then(jsonData => runTheWo(jsonData))
-    .catch(error => errormsg("Gat ekki hlaðið inn gögn"));
+    .catch(errormsg('Gat ekki hlaðið inn gögn'));
 }
 init();
