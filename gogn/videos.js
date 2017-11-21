@@ -108,7 +108,7 @@ function player() {
     playPauseDiv.setAttribute('src', '/img/play.svg');
   }
 }
-/*  if Fetch is okay this function starts and this is the main function*/
+/*  if Fetch is okay this function starts and this is the main function */
 function mainFunction(data) {
   main.removeChild(main.childNodes[2]);
   const id = urlSplit;
@@ -169,7 +169,7 @@ function mainFunction(data) {
     boxer.appendChild(fulDiv);
     boxer.appendChild(forwardDiv);
 
-    /*  eventListener for the button Til baka*/
+    /*  eventListener for the button Til baka  */
     back.addEventListener('click', goBack);
 
   /*  Otherwise the id was not to high and there is a video in the json file with
@@ -213,7 +213,7 @@ async function init() {
   const response = await fetch('videos.json');
 
   await response.json()
-    .then(jsonData => runTheWo(jsonData))
+    .then(jsonData => mainFunction(jsonData))
     .catch(errormsg('Gat ekki hlaðið inn gögn'));
 }
 init();
