@@ -1,5 +1,4 @@
 /*  Þetta sass mun sjá um frontpageid */
-
 .durationDiv {
   position: relative;
   z-index: 1000;
@@ -13,7 +12,6 @@
 
 .flex-Line {
   display: flex;
-
   @media (max-width: 500px) {
     flex-flow: wrap;
   }
